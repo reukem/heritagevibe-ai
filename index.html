@@ -163,9 +163,20 @@
         </div>
       </div>
 
-      <!-- Right Controls: Gemini Key Modal + Equalizer Audio Bell + Audition Badge -->
-      <div class="flex items-center space-x-2.5">
+      <!-- Right Controls: Gemini Key Modal + Architecture Info + Equalizer Audio Bell + Audition Badge -->
+      <div class="flex items-center space-x-2">
         
+        <!-- Architecture Info Button -->
+        <button 
+          id="btn-architecture-info" 
+          onclick="openArchitectureModal()" 
+          title="Tìm hiểu cách hoạt động của Động cơ AI Kép (Gemini Live vs Heuristic Rule Engine)"
+          class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/5 border border-brand-gold/30 text-amber-200 hover:bg-brand-gold/10 text-xs font-semibold transition cursor-pointer"
+        >
+          <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i>
+          <span class="hidden md:inline">Kiến Trúc AI (Dual-Engine)</span>
+        </button>
+
         <!-- Gemini API Key Setup Button -->
         <button 
           id="btn-gemini-key" 
@@ -191,7 +202,7 @@
             <span class="w-0.5 bg-brand-gold rounded-full h-3"></span>
             <span class="w-0.5 bg-brand-gold rounded-full h-1.5"></span>
           </div>
-          <span id="sound-label" class="hidden md:inline">Chuông Đồng</span>
+          <span id="sound-label" class="hidden lg:inline">Chuông Đồng</span>
         </button>
 
         <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
@@ -383,7 +394,14 @@
 
       <div class="hidden sm:flex items-center gap-2 text-xs font-mono text-amber-300/80">
         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-        <span id="ai-engine-status">Gemini Heuristic Engine: Sẵn Sàng</span>
+        <button 
+          onclick="openArchitectureModal()" 
+          title="Bấm để xem chi tiết kiến trúc AI Kép (Gemini Live vs Heuristic)"
+          class="hover:text-brand-gold transition cursor-pointer flex items-center gap-1.5 underline decoration-dotted"
+        >
+          <span id="ai-engine-status">Gemini Heuristic Engine: Sẵn Sàng</span>
+          <i data-lucide="help-circle" class="w-3.5 h-3.5 text-brand-gold/80"></i>
+        </button>
       </div>
     </div>
 
@@ -511,11 +529,11 @@
 
               <!-- Subcategory Tag Filters -->
               <div class="flex items-center gap-1.5 overflow-x-auto custom-scrollbar pb-1 text-[10px]">
-                <button onclick="setFilterSubtag('all')" id="subtag-all" class="px-2.5 py-1 rounded-lg bg-brand-gold/20 text-brand-gold font-bold shrink-0 transition">Tất Cả</button>
-                <button onclick="setFilterSubtag('heritage')" id="subtag-heritage" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 shrink-0 transition">Cổ Phục Triều Đình</button>
-                <button onclick="setFilterSubtag('ethnic')" id="subtag-ethnic" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-cyan-300 shrink-0 transition">Dân Tộc Vùng Cao</button>
-                <button onclick="setFilterSubtag('genz')" id="subtag-genz" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-amber-200 shrink-0 transition">Gen Z Streetwear</button>
-                <button onclick="setFilterSubtag('violation')" id="subtag-violation" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-rose-300 shrink-0 transition">Test Cảnh Báo</button>
+                <button onclick="setFilterSubtag('all')" id="subtag-all" class="px-2.5 py-1 rounded-lg bg-brand-gold/20 text-brand-gold font-bold shrink-0 transition">Tất Cả (54)</button>
+                <button onclick="setFilterSubtag('heritage')" id="subtag-heritage" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-gray-300 shrink-0 transition">Cổ Phục (18)</button>
+                <button onclick="setFilterSubtag('ethnic')" id="subtag-ethnic" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-cyan-300 shrink-0 transition">Vùng Cao (12)</button>
+                <button onclick="setFilterSubtag('genz')" id="subtag-genz" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-amber-200 shrink-0 transition">Gen Z (16)</button>
+                <button onclick="setFilterSubtag('violation')" id="subtag-violation" class="px-2.5 py-1 rounded-lg bg-white/5 hover:bg-white/10 text-rose-300 shrink-0 transition">Test Cảnh Báo (8)</button>
               </div>
             </div>
 
@@ -685,9 +703,13 @@
               </h3>
             </div>
             
-            <!-- Circular SVG Authenticity Gauge -->
+            <!-- Circular SVG Authenticity Gauge With Click-to-Breakdown -->
             <div class="flex items-center gap-3 shrink-0">
-              <div class="relative w-16 h-16 flex items-center justify-center">
+              <button 
+                onclick="openScoreBreakdownModal()" 
+                title="Bấm để xem công thức tính điểm và bóc tách từng món đồ"
+                class="relative w-16 h-16 flex items-center justify-center group cursor-pointer transition hover:scale-105"
+              >
                 <svg class="w-16 h-16 transform -rotate-90" viewBox="0 0 80 80">
                   <circle cx="40" cy="40" r="32" stroke="rgba(255,255,255,0.1)" stroke-width="6" fill="none" />
                   <circle 
@@ -708,14 +730,23 @@
                   <span id="gauge-score-val" class="text-sm font-black text-white font-mono leading-none">98</span>
                   <span class="text-[8px] text-gray-400 font-mono leading-none mt-0.5">/100</span>
                 </div>
-              </div>
+              </button>
 
-              <!-- Guardrail Status Badge -->
-              <div id="guardrail-status-badge" class="flex flex-col items-start px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
-                <span class="text-[9px] uppercase tracking-wider text-emerald-300">TRẠNG THÁI</span>
-                <span id="guardrail-badge-text" class="flex items-center gap-1 mt-0.5">
-                  <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> APPROVED
-                </span>
+              <!-- Guardrail Status Badge & Score Formula Trigger -->
+              <div class="flex flex-col items-start gap-1">
+                <div id="guardrail-status-badge" class="flex flex-col items-start px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
+                  <span class="text-[9px] uppercase tracking-wider text-emerald-300">TRẠNG THÁI</span>
+                  <span id="guardrail-badge-text" class="flex items-center gap-1 mt-0.5">
+                    <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> APPROVED
+                  </span>
+                </div>
+                <button 
+                  onclick="openScoreBreakdownModal()" 
+                  class="text-[10px] text-brand-gold/80 hover:text-brand-gold flex items-center gap-1 cursor-pointer transition underline decoration-dotted"
+                  title="Xem công thức tính toán điểm số"
+                >
+                  <i data-lucide="calculator" class="w-3 h-3 text-brand-gold"></i> Xem công thức điểm
+                </button>
               </div>
             </div>
           </div>
@@ -785,14 +816,17 @@
             </p>
           </div>
 
-          <!-- Bottom Action Buttons: Copy JSON & Export HD Lookbook -->
+          <!-- Bottom Action Buttons: Copy JSON & Export HD Lookbook & Copy Prompt -->
           <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
-            <div class="flex items-center gap-2">
+            <div class="flex flex-wrap items-center gap-2">
               <button onclick="copyCurrentJson()" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-mono text-gray-300 border border-white/10 flex items-center gap-1.5 transition cursor-pointer">
                 <i data-lucide="code" class="w-3.5 h-3.5 text-brand-gold"></i> Copy JSON
               </button>
               <button onclick="exportLookbookCardImage()" class="px-3.5 py-1.5 rounded-lg bg-brand-gold/15 hover:bg-brand-gold/25 text-xs font-semibold text-amber-200 border border-brand-gold/30 flex items-center gap-1.5 transition cursor-pointer">
                 <i data-lucide="download" class="w-3.5 h-3.5 text-brand-gold"></i> Xuất Thẻ Lookbook (PNG)
+              </button>
+              <button onclick="copyAiImagePrompt()" class="px-3.5 py-1.5 rounded-lg bg-white/5 hover:bg-cyan-500/15 text-xs font-semibold text-cyan-300 border border-cyan-500/30 flex items-center gap-1.5 transition cursor-pointer">
+                <i data-lucide="sparkles" class="w-3.5 h-3.5 text-cyan-400"></i> Copy Prompt Tạo Ảnh AI
               </button>
             </div>
             <span class="text-[11px] font-mono text-gray-400">
@@ -889,6 +923,153 @@
               Lưu & Kích Hoạt
             </button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DUAL-ENGINE ARCHITECTURE EXPLAINER MODAL -->
+  <div id="modal-architecture" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4 overflow-y-auto">
+    <div class="glass-card rounded-2xl max-w-2xl w-full p-6 sm:p-7 border border-brand-gold/40 shadow-2xl relative my-8">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl bg-brand-gold/15 text-brand-gold border border-brand-gold/30 flex items-center justify-center">
+            <i data-lucide="cpu" class="w-4 h-4 text-cyan-400"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-white text-base sm:text-lg">Kiến Trúc AI Kép (Dual-Engine Cultural AI)</h4>
+            <p class="text-[11px] text-gray-400 font-mono">Giải mã cơ chế thẩm định: Gemini Live API vs Heuristic Rule Engine</p>
+          </div>
+        </div>
+        <button onclick="closeArchitectureModal()" class="text-gray-400 hover:text-white cursor-pointer p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs">
+        <div class="p-3.5 rounded-xl bg-brand-gold/10 border border-brand-gold/30 text-amber-200 leading-relaxed">
+          <strong>💡 Câu hỏi thường gặp:</strong> <em>"Hệ thống này chỉ có điểm số dựng sẵn (pre-scored) hay có AI thật sự chấm điểm?"</em><br/>
+          <span class="text-gray-300 mt-1 block">
+            Hệ thống gồm <strong>2 Động Cơ Song Song</strong>: Hoàn toàn <strong>KHÔNG</strong> phải kết quả tĩnh hardcoded, mà điểm số và bảng màu biến thiên động 100% theo từng món đồ bạn chọn!
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3.5">
+          <!-- Engine 1 -->
+          <div class="p-4 rounded-xl bg-black/50 border border-emerald-500/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+                ĐỘNG CƠ 1 (LIVE API)
+              </span>
+              <span class="text-[10px] text-emerald-400 font-mono">Cloud Endpoint</span>
+            </div>
+            <h5 class="font-bold text-white text-sm">Google Gemini 2.5 Flash</h5>
+            <p class="text-gray-300 text-[11px] leading-relaxed">
+              Kích hoạt khi bạn nhập <strong>Gemini API Key</strong> vào modal. Trang web sẽ gửi toàn bộ thông tin set đồ lên máy chủ Google, mô hình Gemini 2.5 Flash thực tế sẽ suy luận Chain-of-Thought (CoT), đối chiếu điển chế và trả về JSON chuẩn!
+            </p>
+            <div class="text-[10px] text-gray-400 font-mono pt-1">
+              ✓ Model mới nhất của Google<br/>
+              ✓ Suy luận ngôn ngữ tự nhiên động<br/>
+              ✓ Cần Google API Key cá nhân
+            </div>
+          </div>
+
+          <!-- Engine 2 -->
+          <div class="p-4 rounded-xl bg-black/50 border border-cyan-500/30 space-y-2">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+                ĐỘNG CƠ 2 (HEURISTIC)
+              </span>
+              <span class="text-[10px] text-cyan-400 font-mono">Offline Realtime</span>
+            </div>
+            <h5 class="font-bold text-white text-sm">Gemini Heuristic Rule Matrix</h5>
+            <p class="text-gray-300 text-[11px] leading-relaxed">
+              Hoạt động mặc định khi chưa có API Key để mọi người dùng đều trải nghiệm mượt mà. Hệ thống tính toán ma trận điểm động theo <strong>trọng số của 4 món đồ thực tế</strong> đang mặc trên ma-nơ-canh!
+            </p>
+            <div class="text-[10px] text-gray-400 font-mono pt-1">
+              ✓ Tính trung bình cộng toán học động<br/>
+              ✓ Bắt vi phạm và phạt điểm tức thì<br/>
+              ✓ Trích xuất bảng màu Ngũ Hành thật
+            </div>
+          </div>
+        </div>
+
+        <!-- Mathematical Scoring Explanation -->
+        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-2">
+          <h5 class="font-bold text-white text-xs flex items-center gap-1.5">
+            <i data-lucide="calculator" class="w-3.5 h-3.5 text-brand-gold"></i>
+            Công Thức Tính Điểm Động (Mathematical Scoring Formula):
+          </h5>
+          <div class="p-2.5 rounded-lg bg-black/60 font-mono text-amber-300 text-[11px] text-center border border-brand-gold/20">
+            Điểm Chuẩn Mực = round((Score_Thượng_Y + Score_Hạ_Y + Score_Giày + Score_Phụ_Kiện) / 4)
+          </div>
+          <ul class="text-[11px] text-gray-300 space-y-1 list-disc list-inside leading-relaxed">
+            <li>Mỗi món đồ trong kho 54 items mang một chỉ số văn hóa riêng (100đ cho cổ phục chuẩn, 90-95đ cho streetwear nhã nhặn).</li>
+            <li>Nếu bất kỳ món nào vi phạm cấu trúc tôn nghiêm (croptop EDM, biker shorts, jeans rách) &rarr; Kích hoạt bộ ngắt vi phạm, hạ điểm xuống <strong>12 – 15/100</strong> và gióng chiêng cảnh báo!</li>
+          </ul>
+        </div>
+
+        <div class="flex items-center justify-end gap-2 pt-2 border-t border-white/10">
+          <button 
+            onclick="closeArchitectureModal(); openApiKeyModal();" 
+            class="px-4 py-2 rounded-xl bg-brand-gold text-slate-950 font-bold text-xs hover:brightness-110 transition cursor-pointer"
+          >
+            Cấu Hình Gemini API Key Live
+          </button>
+          <button 
+            onclick="closeArchitectureModal()" 
+            class="px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 text-xs font-semibold text-gray-300 cursor-pointer"
+          >
+            Đã Hiểu
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DYNAMIC SCORE BREAKDOWN MODAL -->
+  <div id="modal-score-breakdown" class="fixed inset-0 bg-black/85 backdrop-blur-md z-50 hidden flex items-center justify-center p-4">
+    <div class="glass-card rounded-2xl max-w-lg w-full p-6 border border-brand-gold/40 shadow-2xl relative">
+      <div class="flex items-center justify-between border-b border-white/10 pb-3 mb-4">
+        <div class="flex items-center gap-2">
+          <i data-lucide="calculator" class="w-5 h-5 text-brand-gold"></i>
+          <div>
+            <h4 class="font-bold text-white text-base">Bóc Tách Điểm Số Thẩm Định</h4>
+            <span class="text-[10px] text-gray-400 font-mono">Bảng tính trọng số 4 món đồ đang mặc</span>
+          </div>
+        </div>
+        <button onclick="closeScoreBreakdownModal()" class="text-gray-400 hover:text-white cursor-pointer">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+
+      <div class="space-y-3.5 text-xs">
+        <div id="score-breakdown-items-list" class="space-y-2">
+          <!-- Populated dynamically by openScoreBreakdownModal() -->
+        </div>
+
+        <div class="p-3 rounded-xl bg-black/60 border border-brand-gold/30">
+          <div class="flex items-center justify-between font-mono">
+            <span class="text-gray-300">Công thức trung bình cộng:</span>
+            <span id="score-breakdown-calc-str" class="text-brand-gold font-bold"></span>
+          </div>
+          <div class="flex items-center justify-between font-mono mt-1 pt-1 border-t border-white/10">
+            <span class="text-white font-bold">ĐIỂM TỔNG HỢP (FINAL):</span>
+            <span id="score-breakdown-final-score" class="text-lg font-black text-emerald-400"></span>
+          </div>
+        </div>
+
+        <div id="score-breakdown-penalty-note" class="hidden p-3 rounded-xl bg-rose-950/40 border border-rose-500/40 text-[11px] text-rose-200 leading-relaxed">
+          ⚠️ <strong>Phát hiện vi phạm quy thức:</strong> Set đồ có món đồ phá hủy cấu trúc cổ phục hoặc mang tính chất phản cảm, hệ thống áp dụng mức điểm phạt tối đa!
+        </div>
+
+        <div class="flex justify-end pt-2">
+          <button 
+            onclick="closeScoreBreakdownModal()" 
+            class="px-5 py-2 rounded-xl bg-brand-gold text-slate-950 font-bold text-xs hover:brightness-110 cursor-pointer"
+          >
+            Đóng
+          </button>
         </div>
       </div>
     </div>
@@ -2412,6 +2593,94 @@
         label.textContent = 'Google Gemini AI';
         statusEl.textContent = 'Gemini Heuristic Engine: Sẵn Sàng';
       }
+    }
+
+    // ARCHITECTURE MODAL HANDLERS
+    function openArchitectureModal() {
+      document.getElementById('modal-architecture').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeArchitectureModal() {
+      document.getElementById('modal-architecture').classList.add('hidden');
+    }
+
+    // DYNAMIC SCORE BREAKDOWN MODAL HANDLERS
+    function openScoreBreakdownModal() {
+      const upper = equippedOutfit.upper;
+      const lower = equippedOutfit.lower;
+      const foot = equippedOutfit.footwear;
+      const acc = equippedOutfit.accessories;
+
+      const listContainer = document.getElementById('score-breakdown-items-list');
+      const uScore = upper ? upper.layerScore : 0;
+      const lScore = lower ? lower.layerScore : 90;
+      const fScore = foot ? foot.layerScore : 90;
+      const aScore = acc ? acc.layerScore : 90;
+
+      const items = [
+        { layer: 'Thượng Y', item: upper, score: uScore },
+        { layer: 'Hạ Y', item: lower, score: lScore },
+        { layer: 'Giày Dép', item: foot, score: fScore },
+        { layer: 'Phụ Kiện', item: acc, score: aScore }
+      ];
+
+      listContainer.innerHTML = items.map(i => {
+        const isVio = i.item?.isViolation;
+        return `
+          <div class="flex items-center justify-between p-2.5 rounded-xl ${isVio ? 'bg-rose-950/30 border-rose-500/30' : 'bg-white/[0.03] border-white/10'} border">
+            <div class="flex items-center gap-2 min-w-0">
+              <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded ${isVio ? 'bg-rose-500/20 text-rose-300' : 'bg-brand-gold/15 text-brand-gold'} shrink-0 font-bold">
+                ${i.layer}
+              </span>
+              <span class="text-xs font-semibold text-white truncate">${i.item ? i.item.name : 'Chưa chọn'}</span>
+            </div>
+            <span class="font-mono font-bold text-xs ${isVio ? 'text-rose-400' : 'text-emerald-400'} shrink-0">
+              ${i.score}/100
+            </span>
+          </div>
+        `;
+      }).join('');
+
+      const hasViolation = (upper?.isViolation) || (lower?.isViolation) || (foot?.isViolation) || (acc?.isViolation);
+      const penaltyNote = document.getElementById('score-breakdown-penalty-note');
+      const calcStr = document.getElementById('score-breakdown-calc-str');
+      const finalScoreEl = document.getElementById('score-breakdown-final-score');
+
+      if (hasViolation) {
+        penaltyNote.classList.remove('hidden');
+        calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 - 80 (Vi Phạm)`;
+        finalScoreEl.className = 'text-lg font-black text-rose-400 font-mono';
+        finalScoreEl.textContent = '15/100 (REJECTED)';
+      } else {
+        penaltyNote.classList.add('hidden');
+        const avg = Math.round((uScore + lScore + fScore + aScore) / 4);
+        calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 = ${avg}`;
+        finalScoreEl.className = 'text-lg font-black text-emerald-400 font-mono';
+        finalScoreEl.textContent = `${avg}/100 (APPROVED)`;
+      }
+
+      document.getElementById('modal-score-breakdown').classList.remove('hidden');
+      if (window.lucide) lucide.createIcons();
+    }
+
+    function closeScoreBreakdownModal() {
+      document.getElementById('modal-score-breakdown').classList.add('hidden');
+    }
+
+    // COPY AI IMAGE PROMPT (MIDJOURNEY / FLUX / GOOGLE FLOW)
+    function copyAiImagePrompt() {
+      const upper = equippedOutfit.upper;
+      const lower = equippedOutfit.lower;
+      const foot = equippedOutfit.footwear;
+      const acc = equippedOutfit.accessories;
+
+      const promptText = `Full-body fashion editorial photography, Vietnamese Gen Z student wearing authentic ${upper?.name || 'Áo Tấc Cổ Phục'} (${upper?.material || 'lụa tơ tằm'}), remixed with contemporary ${lower?.name || 'chân váy xếp ly'} (${lower?.material || ''}), accompanied by ${foot?.name || 'hài thêu sen'} and ${acc?.name || 'túi mây tre đan'}. Dominant colors: ${upper?.colorName || 'thiên thanh'}, ${lower?.colorName || 'trắng kem'}. Posed gracefully at Imperial Citadel of Thang Long, Hanoi. Soft cinematic natural autumn lighting, subtle golden mist, highly detailed silk fabric texture, Vogue Heritage Vietnam editorial style, 8k resolution, shot on 85mm f/1.4 lens --ar 4:5 --v 6.0`;
+
+      navigator.clipboard.writeText(promptText).then(() => {
+        playBronzeBell(660, 0.8);
+        alert('Đã sao chép Prompt Tạo Ảnh AI (cho Midjourney / Flux / Google Flow) vào bộ nhớ tạm!\n\nBạn có thể dán trực tiếp vào công cụ AI để render ảnh thời trang người thật mặc set đồ này.');
+      });
     }
 
     // RUN DYNAMIC EVALUATION FROM MANNEQUIN
