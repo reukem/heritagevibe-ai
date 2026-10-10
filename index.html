@@ -24,6 +24,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+  <!-- KaTeX for Museum-Grade LaTeX Mathematical Typesetting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
@@ -1009,17 +1013,37 @@
         </div>
 
         <!-- Mathematical Scoring Explanation -->
-        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-2">
-          <h5 class="font-bold text-white text-xs flex items-center gap-1.5">
-            <i data-lucide="calculator" class="w-3.5 h-3.5 text-brand-gold"></i>
-            Công Thức Tính Điểm Động (Mathematical Scoring Formula):
-          </h5>
-          <div class="p-2.5 rounded-lg bg-black/60 font-mono text-amber-300 text-[11px] text-center border border-brand-gold/20">
-            Điểm Chuẩn Mực = round((Score_Thượng_Y + Score_Hạ_Y + Score_Giày + Score_Phụ_Kiện) / 4)
+        <div class="p-4 rounded-xl bg-white/[0.03] border border-white/10 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <h5 class="font-bold text-white text-xs flex items-center gap-1.5">
+              <i data-lucide="calculator" class="w-3.5 h-3.5 text-brand-gold"></i>
+              Công Thức Tính Điểm Động (Mathematical Scoring Formula):
+            </h5>
+            <span class="text-[9px] font-mono font-bold px-2 py-0.5 rounded bg-brand-gold/15 text-amber-300 border border-brand-gold/30">
+              LaTeX KaTeX Engine
+            </span>
           </div>
-          <ul class="text-[11px] text-gray-300 space-y-1 list-disc list-inside leading-relaxed">
-            <li>Mỗi món đồ trong kho 54 items mang một chỉ số văn hóa riêng (100đ cho cổ phục chuẩn, 90-95đ cho streetwear nhã nhặn).</li>
-            <li>Nếu bất kỳ món nào vi phạm cấu trúc tôn nghiêm (croptop EDM, biker shorts, jeans rách) &rarr; Kích hoạt bộ ngắt vi phạm, hạ điểm xuống <strong>12 – 15/100</strong> và gióng chiêng cảnh báo!</li>
+
+          <!-- LaTeX Mathematical Display Container -->
+          <div class="p-3.5 sm:p-4 rounded-xl bg-black/85 border border-brand-gold/30 shadow-2xl relative overflow-x-auto text-center my-1.5">
+            <div id="katex-formula-main" class="text-amber-300 text-sm sm:text-base py-1 font-serif select-all">
+              <!-- KaTeX will render the equation here -->
+              <span class="font-mono text-xs text-amber-300">
+                \text{Điểm Chuẩn Mực} = \operatorname{round}\left( \frac{\mathcal{S}_{\text{Thượng Y}} + \mathcal{S}_{\text{Hạ Y}} + \mathcal{S}_{\text{Giày}} + \mathcal{S}_{\text{Phụ Kiện}}}{4} \right)
+              </span>
+            </div>
+            
+            <div id="katex-formula-penalty" class="text-rose-300 text-[11px] sm:text-xs pt-2 mt-2 border-t border-white/10 font-serif">
+              <!-- Penalty Trigger Equation in LaTeX -->
+              <span class="font-mono text-[10px] text-rose-300">
+                \forall \, x \in \text{Outfit}: x \in \mathcal{V}_{\text{Vi Phạm}} \implies \text{Score}_{\text{Final}} \in [12, 15] \quad (\text{Chiêng Báo Động})
+              </span>
+            </div>
+          </div>
+
+          <ul class="text-[11px] text-gray-300 space-y-1 list-disc list-inside leading-relaxed pt-0.5">
+            <li>Mỗi món đồ trong kho 54 items mang một chỉ số văn hóa riêng (<span class="text-emerald-300 font-mono font-bold">100đ</span> cho cổ phục chuẩn, <span class="text-cyan-300 font-mono font-bold">90–95đ</span> cho streetwear nhã nhặn).</li>
+            <li>Nếu bất kỳ món nào vi phạm cấu trúc tôn nghiêm (croptop EDM, biker shorts, jeans rách) &rarr; Kích hoạt bộ ngắt vi phạm, hạ điểm xuống <strong class="text-rose-400">12 – 15/100</strong> và gióng chiêng cảnh báo!</li>
           </ul>
         </div>
 
@@ -2609,10 +2633,45 @@
       }
     }
 
+    // LATEX FORMULA RENDERING (KaTeX Engine)
+    function renderLatexFormulas() {
+      if (typeof katex === 'undefined') {
+        setTimeout(renderLatexFormulas, 150);
+        return;
+      }
+
+      const mainEl = document.getElementById('katex-formula-main');
+      if (mainEl) {
+        try {
+          katex.render(
+            "\\mathbf{S}_{\\text{Chuẩn Mực}} = \\operatorname{round}\\left( \\frac{\\mathcal{S}_{\\text{Thượng Y}} + \\mathcal{S}_{\\text{Hạ Y}} + \\mathcal{S}_{\\text{Giày}} + \\mathcal{S}_{\\text{Phụ Kiện}}}{4} \\right)",
+            mainEl,
+            { displayMode: true, throwOnError: false }
+          );
+        } catch (e) {
+          console.warn("KaTeX main formula render error:", e);
+        }
+      }
+
+      const penaltyEl = document.getElementById('katex-formula-penalty');
+      if (penaltyEl) {
+        try {
+          katex.render(
+            "\\forall \\, x \\in \\text{Outfit}: x \\in \\mathcal{V}_{\\text{Vi Phạm}} \\implies \\mathbf{S}_{\\text{Final}} \\in [12, 15] \\quad (\\text{Chiêng Báo Động})",
+            penaltyEl,
+            { displayMode: true, throwOnError: false }
+          );
+        } catch (e) {
+          console.warn("KaTeX penalty formula render error:", e);
+        }
+      }
+    }
+
     // ARCHITECTURE MODAL HANDLERS
     function openArchitectureModal() {
       document.getElementById('modal-architecture').classList.remove('hidden');
       if (window.lucide) lucide.createIcons();
+      renderLatexFormulas();
     }
 
     function closeArchitectureModal() {
@@ -2663,13 +2722,37 @@
 
       if (hasViolation) {
         penaltyNote.classList.remove('hidden');
-        calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 - 80 (Vi Phạm)`;
+        if (typeof katex !== 'undefined') {
+          try {
+            katex.render(
+              `\\frac{${uScore} + ${lScore} + ${fScore} + ${aScore}}{4} - \\Delta_{\\text{Vi Phạm}} \\to \\mathbf{15}`,
+              calcStr,
+              { displayMode: false, throwOnError: false }
+            );
+          } catch(e) {
+            calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 - 80 (Vi Phạm)`;
+          }
+        } else {
+          calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 - 80 (Vi Phạm)`;
+        }
         finalScoreEl.className = 'text-lg font-black text-rose-400 font-mono';
         finalScoreEl.textContent = '15/100 (REJECTED)';
       } else {
         penaltyNote.classList.add('hidden');
         const avg = Math.round((uScore + lScore + fScore + aScore) / 4);
-        calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 = ${avg}`;
+        if (typeof katex !== 'undefined') {
+          try {
+            katex.render(
+              `\\frac{${uScore} + ${lScore} + ${fScore} + ${aScore}}{4} = ${((uScore + lScore + fScore + aScore)/4).toFixed(1)} \\approx \\mathbf{${avg}}`,
+              calcStr,
+              { displayMode: false, throwOnError: false }
+            );
+          } catch(e) {
+            calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 = ${avg}`;
+          }
+        } else {
+          calcStr.textContent = `(${uScore} + ${lScore} + ${fScore} + ${aScore}) / 4 = ${avg}`;
+        }
         finalScoreEl.className = 'text-lg font-black text-emerald-400 font-mono';
         finalScoreEl.textContent = `${avg}/100 (APPROVED)`;
       }
@@ -3297,7 +3380,9 @@ Yêu cầu trả về DUY NHẤT một mã JSON hợp lệ theo schema sau (khô
       if (window.lucide) {
         lucide.createIcons();
       }
+      renderLatexFormulas();
     });
+    window.addEventListener('load', renderLatexFormulas);
   </script>
 </body>
 </html>

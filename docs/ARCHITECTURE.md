@@ -59,7 +59,11 @@ Mô hình được cấu hình xuất dữ liệu dạng JSON tất định thô
 Mỗi món đồ trong kho 54 items mang một chỉ số văn hóa cơ sở `layerScore` (từ 0 đến 100):
 
 ```math
-\text{Integrity Score} = \text{round}\left( \frac{\text{Score}_{\text{Top}} + \text{Score}_{\text{Bottom}} + \text{Score}_{\text{Shoes}} + \text{Score}_{\text{Accessory}}}{4} \right)
+\mathbf{S}_{\text{Chuẩn Mực}} = \operatorname{round}\left( \frac{\mathcal{S}_{\text{Thượng Y}} + \mathcal{S}_{\text{Hạ Y}} + \mathcal{S}_{\text{Giày}} + \mathcal{S}_{\text{Phụ Kiện}}}{4} \right)
+```
+và điều kiện kích hoạt ngắt mạch:
+```math
+\forall \, x \in \text{Outfit} : x \in \mathcal{V}_{\text{Vi Phạm}} \implies \mathbf{S}_{\text{Final}} \in [12, 15] \quad (\text{Chiêng Báo Động})
 ```
 
 ### 3.2. Bộ Ngắt Mạch Vi Phạm (Violation Circuit Breaker)
