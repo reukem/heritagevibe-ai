@@ -2,7 +2,7 @@
 
 > **Dự Án Dự Thi Google AI Arena Vietnam 2026 — Vòng Audition**  
 > *Chủ đề:* **Việt Phục Remix – Phối Trang Phục Truyền Thống Theo Phong Cách Gen Z**  
-> *Tác giả:* **Ngô Minh Thiên Bảo (Aki / Reukem)** — Lớp 12A1 Trường Vinschool Central Park  
+> *Tác giả:* **Ngô Minh Thiên Bảo (Reukem)** — Lớp 12A1 Trường Vinschool Central Park  
 > *Trải nghiệm trực tiếp trên GitHub Pages:* **[https://reukem.github.io/heritagevibe-ai/](https://reukem.github.io/heritagevibe-ai/)**  
 > *Mã nguồn GitHub:* **[https://github.com/reukem/heritagevibe-ai](https://github.com/reukem/heritagevibe-ai)**
 
@@ -59,12 +59,22 @@ HeritageVibe AI được kiến trúc theo mô hình **AI Kép 2 Chế Độ (Du
 ### Chế Độ 2: Gemini Heuristic Guardrail Engine (Mô Hình Quy Tắc Văn Hóa Động Ngoại Tuyến)
 - **Cơ chế:** Hoạt động mặc định ngay khi vào trang web, đảm bảo mọi giám khảo hay khách tham quan đều có thể thử nghiệm tức thì mà không cần đăng ký API Key.
 - **Tính toán Động (Dynamic Mathematical Calculation - Hoàn toàn KHÔNG PHẢI hardcoded tĩnh!):**
-  1. **Công thức tính điểm động:** Mỗi món đồ trong 54 items mang một chỉ số toàn vẹn văn hóa (`layerScore`). Điểm tổng thể được tính toán bằng trung bình cộng ma trận trọng số:
-     $$\text{Integrity Score} = \text{round}\left(\frac{\text{Score}_{\text{Thượng Y}} + \text{Score}_{\text{Hạ Y}} + \text{Score}_{\text{Giày}} + \text{Score}_{\text{Phụ Kiện}}}{4}\right)$$
-     *Ví dụ:* Áo Ngũ Thân (98đ) + Váy Quấn Ê Đê (97đ) + Sneakers Trắng (94đ) + Trâm Bạc (97đ) $\rightarrow$ Điểm = `96/100` (APPROVED). Nếu đổi sang Bốt combat đinh tán (65đ) $\rightarrow$ Điểm lập tức tụt xuống `89/100`!
-  2. **Bộ ngắt vi phạm tức thì (Violation Circuit Breaker):** Nếu set đồ chứa bất kỳ món nào vi phạm cấu trúc (Áo croptop EDM, Quần biker bó sát, Quần rách), điểm số bị phạt tụt dốc xuống `12 – 15/100`, kích hoạt tiếng **Chiêng Cảnh Báo 180Hz**, đổi viền ma-nơ-canh sang đỏ nét đứt và hiển thị 3 đề xuất chấn chỉnh văn hóa.
-  3. **Ma trận Bảng màu Ngũ Hành Động:** Trích xuất 4 mã màu HEX thật của 4 món đồ đang mặc (`#C29B38`, `#18181B`, `#FFFFFF`, `#E2E8F0`), phân định 4 nguyên tố *Thủy - Kim - Thổ - Thạch* và viết lời luận giải tương sinh tương khắc.
-  4. **Ma-nơ-canh Haute-Couture Vector SVG:** Tự động vẽ các chi tiết đặc trưng (hàng khuy búp xửa, hoa văn sáp ong Mèo Vạc, túi hộp cargo, đai cườm Tây Nguyên, tai nghe Bluetooth...) theo thời gian thực.
+
+#### 📐 Công thức tính điểm động:
+Mỗi món đồ trong 54 items mang một chỉ số toàn vẹn văn hóa (`layerScore`). Điểm tổng thể được tính toán bằng trung bình cộng ma trận trọng số 4 lớp y phục:
+
+```math
+\text{Integrity Score} = \text{round}\left( \frac{\text{Score}_{\text{Top}} + \text{Score}_{\text{Bottom}} + \text{Score}_{\text{Shoes}} + \text{Score}_{\text{Accessory}}}{4} \right)
+```
+
+> **Biểu thức tính toán chuẩn:**  
+> `Integrity Score = round( (Score_Thượng_Y + Score_Hạ_Y + Score_Giày + Score_Phụ_Kiện) / 4 )`  
+>  
+> 💡 *Ví dụ:* Áo Ngũ Thân (98đ) + Váy Quấn Ê Đê (97đ) + Sneakers Trắng (94đ) + Trâm Bạc (97đ) → Điểm = **`96/100` (APPROVED)**. Nếu đổi sang Bốt combat đinh tán (65đ) → Điểm lập tức tụt xuống **`89/100`**!
+
+- **Bộ ngắt vi phạm tức thì (Violation Circuit Breaker):** Nếu set đồ chứa bất kỳ món nào vi phạm cấu trúc (Áo croptop EDM, Quần biker bó sát, Quần rách), điểm số bị phạt tụt dốc xuống `12 – 15/100`, kích hoạt tiếng **Chiêng Cảnh Báo 180Hz**, đổi viền ma-nơ-canh sang đỏ nét đứt và hiển thị 3 đề xuất chấn chỉnh văn hóa.
+- **Ma trận Bảng màu Ngũ Hành Động:** Trích xuất 4 mã màu HEX thật của 4 món đồ đang mặc (`#C29B38`, `#18181B`, `#FFFFFF`, `#E2E8F0`), phân định 4 nguyên tố *Thủy - Kim - Thổ - Thạch* và viết lời luận giải tương sinh tương khắc.
+- **Ma-nơ-canh Haute-Couture Vector SVG:** Tự động vẽ các chi tiết đặc trưng (hàng khuy búp xửa, hoa văn sáp ong Mèo Vạc, túi hộp cargo, đai cườm Tây Nguyên, tai nghe Bluetooth...) theo thời gian thực.
 
 ---
 
@@ -119,5 +129,5 @@ Kho đồ gồm 4 nhóm trang phục:
 ## 📄 7. Bản Quyền & Dự Thi
 
 - **Cuộc thi:** Google AI Arena Vietnam 2026
-- **Tác giả:** Ngô Minh Thiên Bảo (Aki / Reukem) — Lớp 12A1 Vinschool Central Park
+- **Tác giả:** Ngô Minh Thiên Bảo (Reukem) — Lớp 12A1 Vinschool Central Park
 - **Email:** `baongoplayzgame@gmail.com`

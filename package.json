@@ -7,6 +7,6 @@
     "start": "npx serve ."
   },
   "keywords": ["viet-phuc", "heritage-ai", "gemini-flash", "google-ai-arena"],
-  "author": "Aki (Ngô Minh Thiên Bảo)",
+  "author": "Ngô Minh Thiên Bảo (Reukem)",
   "license": "MIT"
 }
