@@ -1,0 +1,23 @@
+name: Deploy & Validate HeritageVibe AI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Validate HTML and Assets
+        run: |
+          echo "Validating repository structure..."
+          test -f index.html || exit 1
+          test -f README.md || exit 1
+          test -f SUBMISSION_DOSSIER.md || exit 1
+          test -f assets/preview_studio.png || exit 1
+          echo "All core assets and documents verified successfully!"
