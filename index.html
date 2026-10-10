@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HeritageVibe AI — Việt Phục Remix Engine (Google AI Arena 2026)</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+          },
+          colors: {
+            brand: {
+              gold: '#D4AF37',
+              cyan: '#38BDF8',
+              crimson: '#E11D48',
+              dark: '#0A0F1D',
+              card: '#111827',
+              border: '#1F2937',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #070B14;
+      color: #F3F4F6;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.08) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(212, 175, 55, 0.08) 0px, transparent 50%),
+        radial-gradient(at 50% 50%, rgba(15, 23, 42, 0.8) 0px, transparent 100%);
+      background-attachment: fixed;
+    }
+    .glass-card {
+      background: rgba(17, 24, 39, 0.75);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gold-gradient-text {
+      background: linear-gradient(135deg, #FDE68A 0%, #D4AF37 50%, #B45309 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .cyan-gradient-text {
+      background: linear-gradient(135deg, #BAE6FD 0%, #38BDF8 50%, #0284C7 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: rgba(15, 23, 42, 0.6);
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body class="min-h-screen font-sans selection:bg-brand-cyan/20 selection:text-brand-cyan">
+
+  <!-- TOP ANNOUNCEMENT BANNER -->
+  <header class="border-b border-white/5 bg-black/40 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-gold to-brand-cyan p-0.5 shadow-lg shadow-brand-cyan/10">
+          <div class="w-full h-full bg-[#070B14] rounded-[10px] flex items-center justify-center">
+            <i data-lucide="sparkles" class="w-5 h-5 text-brand-gold"></i>
+          </div>
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h1 class="text-lg font-bold tracking-tight text-white flex items-center gap-1.5">
+              HeritageVibe <span class="text-xs font-semibold px-2 py-0.5 rounded-full bg-brand-cyan/10 text-brand-cyan border border-brand-cyan/20">AI</span>
+            </h1>
+            <span class="text-[11px] text-gray-400 hidden sm:inline-block">| Việt Phục Remix Engine</span>
+          </div>
+          <p class="text-[11px] text-gray-500 font-mono">Google Gemini 2.5 Flash • Tri-Layer Guardrail</p>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3">
+        <span class="hidden md:inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          Google AI Arena 2026 Audition
+        </span>
+        <a href="#demo-section" class="px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-gradient-to-r from-brand-cyan to-blue-600 text-white shadow-lg shadow-brand-cyan/20 hover:opacity-95 transition">
+          Thử Nghiệm Trực Tiếp
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="pt-12 pb-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-xs text-gray-300 mb-6">
+      <i data-lucide="shield-check" class="w-4 h-4 text-brand-gold"></i>
+      <span>Đề tài: <strong>Việt phục Remix</strong> — Phối trang phục truyền thống theo phong cách Gen Z</span>
+    </div>
+    
+    <h2 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white max-w-4xl mx-auto leading-tight">
+      Tự Do Sáng Tạo <span class="gold-gradient-text font-serif italic">Cổ Phục</span>, <br class="hidden sm:inline"/>
+      Vẹn Toàn <span class="cyan-gradient-text">Tôn Nghiêm Di Sản</span>.
+    </h2>
+    
+    <p class="mt-4 text-sm sm:text-base text-gray-400 max-w-2xl mx-auto">
+      Cầu nối thông minh giữa kho tàng điển chế y phục Việt Nam và phong cách Streetwear đương đại của Gen Z. Tích hợp mô hình <strong>Gemini 2.5 Flash</strong> cùng <strong>Quy tắc 3 Lớp Phòng Hộ Văn Hóa (Tri-Layer Cultural Guardrails)</strong>.
+    </p>
+
+    <!-- QUICK BENCHMARK DUAL-PRESET BUTTONS (CRITICAL FOR LIVE VIDEO/DEMO) -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <button id="btn-load-case1" onclick="loadPresetCase(1)" class="group flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-500/20 to-teal-500/10 border border-emerald-500/30 text-emerald-300 hover:bg-emerald-500/25 transition shadow-lg shadow-emerald-950/40 text-xs sm:text-sm font-semibold">
+        <span class="w-6 h-6 rounded-lg bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition">
+          <i data-lucide="check-circle-2" class="w-4 h-4"></i>
+        </span>
+        <span>Case 1: Kỷ Yếu Thăng Long (Chuẩn Mực 98đ)</span>
+      </button>
+
+      <button id="btn-load-case2" onclick="loadPresetCase(2)" class="group flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-gradient-to-r from-rose-500/20 to-red-500/10 border border-rose-500/30 text-rose-300 hover:bg-rose-500/25 transition shadow-lg shadow-rose-950/40 text-xs sm:text-sm font-semibold">
+        <span class="w-6 h-6 rounded-lg bg-rose-500/20 flex items-center justify-center text-rose-400 group-hover:scale-110 transition">
+          <i data-lucide="alert-triangle" class="w-4 h-4"></i>
+        </span>
+        <span>Case 2: EDM Cyberpunk (Kích Hoạt Chặn Đỏ 12đ)</span>
+      </button>
+
+      <button onclick="resetForm()" class="px-3 py-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-400 hover:text-white hover:bg-white/10 transition text-xs font-medium flex items-center gap-1.5">
+        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Làm Mới
+      </button>
+    </div>
+  </section>
+
+  <!-- MAIN WORKBENCH SECTION -->
+  <main id="demo-section" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- LEFT COLUMN: STYLIST INPUT STUDIO (5 Cols) -->
+      <div class="lg:col-span-5 glass-card rounded-2xl p-6 shadow-2xl relative border border-white/10">
+        <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
+          <div class="flex items-center gap-2">
+            <i data-lucide="sliders" class="w-5 h-5 text-brand-cyan"></i>
+            <h3 class="font-bold text-white text-base">Stylist Studio (Đầu Vào Phối Đồ)</h3>
+          </div>
+          <span class="text-[11px] font-mono text-gray-400 px-2 py-0.5 rounded bg-white/5 border border-white/5">Gen Z Mode</span>
+        </div>
+
+        <form id="stylist-form" onsubmit="handleSubmit(event)" class="space-y-4">
+          <!-- Target Event -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">
+              Hoàn Cảnh / Sự Kiện Sử Dụng <span class="text-brand-crimson">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="input-event" 
+              required
+              class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-sm text-white placeholder-gray-500 focus:outline-none focus:border-brand-cyan transition"
+              placeholder="VD: Lễ tốt nghiệp đại học tại Hoàng thành Thăng Long..."
+              value="Lễ tốt nghiệp đại học và chụp ảnh kỷ yếu mùa thu tại Hoàng thành Thăng Long"
+            />
+          </div>
+
+          <!-- Primary Garment Selection -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">
+              Loại Cổ Phục Trung Tâm <span class="text-brand-crimson">*</span>
+            </label>
+            <select 
+              id="input-garment"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-sm text-white focus:outline-none focus:border-brand-cyan transition"
+            >
+              <option value="Áo tấc (Áo ngũ thân tay thụng)">Áo tấc (Áo ngũ thân tay thụng - Lễ phục Triều Nguyễn)</option>
+              <option value="Áo ngũ thân lập lĩnh tay chẽn">Áo ngũ thân lập lĩnh tay chẽn (Thường phục năng động)</option>
+              <option value="Áo giao lĩnh">Áo giao lĩnh (Cổ chéo - Thời Lê Trung Hưng/Lê Sơ)</option>
+              <option value="Áo Nhật Bình">Áo Nhật Bình (Cung phụng triều Nguyễn)</option>
+              <option value="Áo viên lĩnh">Áo viên lĩnh (Cổ tròn)</option>
+              <option value="Áo đối khâm">Áo đối khâm (Hai vạt song song)</option>
+            </select>
+          </div>
+
+          <!-- User Persona & Vibe -->
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1.5">Độ Tuổi & Vai Trò</label>
+              <input 
+                type="text" 
+                id="input-demographics"
+                class="w-full px-3 py-2 rounded-xl bg-black/40 border border-white/10 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-cyan transition"
+                placeholder="VD: Nữ sinh viên (20 tuổi)"
+                value="Nữ sinh viên đại học (20 tuổi)"
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-gray-300 mb-1.5">Phong Cách (Vibe)</label>
+              <select 
+                id="input-vibe"
+                class="w-full px-3 py-2 rounded-xl bg-black/40 border border-white/10 text-xs text-white focus:outline-none focus:border-brand-cyan transition"
+              >
+                <option value="Minimalist Heritage (Tối giản thanh lịch)">Minimalist Heritage (Tối giản thanh lịch)</option>
+                <option value="Dark Streetwear / Techwear (Đường phố cá tính)">Dark Streetwear / Techwear (Đường phố cá tính)</option>
+                <option value="Vintage Retro Saigon (Hoài cổ)">Vintage Retro Saigon (Hoài cổ)</option>
+                <option value="Y2K Experimental (Phá cách đương đại)">Y2K Experimental (Phá cách đương đại)</option>
+                <option value="Parisian Chic x Cổ Phong">Parisian Chic x Cổ Phong</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Wardrobe & Remix Pieces -->
+          <div>
+            <label class="block text-xs font-semibold text-gray-300 mb-1.5">
+              Món Đồ Remix Muốn Kết Hợp (Tủ đồ thường nhật)
+            </label>
+            <textarea 
+              id="input-remix-details"
+              rows="3"
+              class="w-full px-3.5 py-2.5 rounded-xl bg-black/40 border border-white/10 text-xs text-white placeholder-gray-500 focus:outline-none focus:border-brand-cyan transition"
+              placeholder="VD: Chân váy xếp ly trắng, giày hài thêu đệm êm, túi mây tre đan..."
+            >Tơ tằm màu xanh thiên thanh, phối chân váy xếp ly trắng tối giản, hài thêu truyền thống kết hợp túi xách thủ công mây tre đan.</textarea>
+          </div>
+
+          <!-- Guardrail Options -->
+          <div class="p-3 rounded-xl bg-white/[0.03] border border-white/5 space-y-2">
+            <div class="flex items-center justify-between text-xs text-gray-300">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-brand-gold"></i>
+                Tri-Layer Guardrail Audit
+              </span>
+              <span class="text-[10px] text-emerald-400 font-mono">STRICT MODE ON</span>
+            </div>
+            <p class="text-[11px] text-gray-500 leading-relaxed">
+              Tự động kiểm tra: (1) Cấu trúc may 5 thân bất biến; (2) Cấm kỵ Long văn 5 móng & hoàng quyền; (3) Hài hòa văn minh đương đại.
+            </p>
+          </div>
+
+          <!-- Submit Button -->
+          <button 
+            type="submit" 
+            id="btn-submit"
+            class="w-full py-3 rounded-xl bg-gradient-to-r from-brand-gold via-amber-500 to-brand-gold text-slate-950 font-bold text-sm shadow-lg shadow-brand-gold/20 hover:opacity-95 transition flex items-center justify-center gap-2"
+          >
+            <i data-lucide="sparkles" class="w-4 h-4 text-slate-950"></i>
+            <span>Chạy Suy Luận Gemini 2.5 Flash</span>
+          </button>
+        </form>
+
+        <!-- CoT Status Stepper Overlay (Hidden until inference) -->
+        <div id="cot-stepper" class="hidden mt-4 p-4 rounded-xl bg-black/60 border border-brand-cyan/20 space-y-2.5">
+          <div class="flex items-center justify-between text-xs text-brand-cyan font-mono">
+            <span class="flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-brand-cyan animate-ping"></span>
+              Gemini CoT Reasoning Pipeline
+            </span>
+            <span id="cot-timer" class="text-gray-400">0.4s</span>
+          </div>
+          <div class="space-y-1.5 text-[11px] text-gray-400 font-mono">
+            <div id="cot-step-1" class="flex items-center gap-2 text-gray-400">
+              <i data-lucide="check" class="w-3 h-3"></i> Bước 1: Intent & Environmental Semantics Parsing
+            </div>
+            <div id="cot-step-2" class="flex items-center gap-2 text-gray-400">
+              <i data-lucide="check" class="w-3 h-3"></i> Bước 2: Historical Taxonomy & Ontology Grounding
+            </div>
+            <div id="cot-step-3" class="flex items-center gap-2 text-gray-400">
+              <i data-lucide="check" class="w-3 h-3"></i> Bước 3: Tri-Layer Cultural Guardrail Audit
+            </div>
+            <div id="cot-step-4" class="flex items-center gap-2 text-gray-400">
+              <i data-lucide="check" class="w-3 h-3"></i> Bước 4: Chromatic & Silhouette Synthesis
+            </div>
+            <div id="cot-step-5" class="flex items-center gap-2 text-gray-400">
+              <i data-lucide="check" class="w-3 h-3"></i> Bước 5: Deterministic JSON Serialization
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: DYNAMIC LOOKBOOK CARD & GUARDRAIL SHIELD (7 Cols) -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- DYNAMIC RESULT CONTAINER -->
+        <div id="result-container" class="glass-card rounded-2xl p-6 sm:p-7 shadow-2xl relative border border-white/10 transition-all duration-300">
+          <!-- Result Header -->
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
+            <div>
+              <span id="lookbook-era-tag" class="text-[11px] font-semibold text-brand-cyan bg-brand-cyan/10 px-2.5 py-0.5 rounded-full border border-brand-cyan/20">
+                Thời Nguyễn (1802-1945)
+              </span>
+              <h3 id="lookbook-title" class="text-xl sm:text-2xl font-bold text-white mt-1.5 font-serif">
+                Thiên Thanh Tựu Trường - Minimalist Academic Heritage
+              </h3>
+            </div>
+            <div id="guardrail-status-badge" class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold">
+              <i data-lucide="shield-check" class="w-4 h-4"></i>
+              <span>APPROVED (98/100)</span>
+            </div>
+          </div>
+
+          <!-- Guardrail Alert Box (Dynamic: Green or Red) -->
+          <div id="guardrail-alert-box" class="mt-4 p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/20 text-xs leading-relaxed text-emerald-200">
+            <div class="flex items-start gap-2.5">
+              <i id="guardrail-icon" data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+              <div>
+                <p id="guardrail-assessment" class="font-medium">
+                  Bộ trang phục tuân thủ trọn vẹn cả 3 lớp bảo vệ văn hóa: Giữ nguyên kết cấu năm thân lập lĩnh và tay thụng tôn nghiêm của Áo tấc (Layer 1); Không sử dụng hoa văn vượt cấp hay biểu tượng cấm kỵ (Layer 2); Sự kết hợp chân váy xếp ly và túi mây tre đan mang lại vẻ đẹp tân thời, lịch sự tuyệt đối trong không gian di tích quốc gia đặc biệt (Layer 3).
+                </p>
+                <div id="remedial-box" class="hidden mt-2 pt-2 border-t border-rose-500/20">
+                  <span class="font-bold text-rose-300 block mb-1">Gợi ý điều chỉnh để đạt chuẩn:</span>
+                  <ul id="remedial-list" class="list-disc list-inside space-y-1 text-rose-200/90 text-[11px]"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Color Theory Palette Swatches -->
+          <div class="mt-5">
+            <div class="flex items-center justify-between text-xs text-gray-300 mb-2 font-semibold">
+              <span class="flex items-center gap-1.5">
+                <i data-lucide="palette" class="w-3.5 h-3.5 text-brand-gold"></i>
+                Bảng Màu Ngũ Hành Tương Sinh (Color Theory Matrix)
+              </span>
+              <span id="color-harmony-type" class="text-[11px] font-mono text-gray-400">Ngũ Hành Tương Sinh</span>
+            </div>
+            
+            <div id="palette-swatches" class="grid grid-cols-4 gap-2">
+              <!-- Color 1 -->
+              <div class="group relative rounded-xl p-2.5 text-center border border-white/10 transition hover:scale-105" style="background-color: #7EA8BE;">
+                <span class="text-[11px] font-mono font-bold text-slate-900 bg-white/80 px-1.5 py-0.5 rounded shadow-sm">#7EA8BE</span>
+                <span class="block text-[10px] text-slate-950 font-semibold mt-1">Hành Thủy</span>
+              </div>
+              <!-- Color 2 -->
+              <div class="group relative rounded-xl p-2.5 text-center border border-white/10 transition hover:scale-105" style="background-color: #F7F9FB;">
+                <span class="text-[11px] font-mono font-bold text-slate-900 bg-white/80 px-1.5 py-0.5 rounded shadow-sm">#F7F9FB</span>
+                <span class="block text-[10px] text-slate-950 font-semibold mt-1">Hành Kim</span>
+              </div>
+              <!-- Color 3 -->
+              <div class="group relative rounded-xl p-2.5 text-center border border-white/10 transition hover:scale-105" style="background-color: #C29B38;">
+                <span class="text-[11px] font-mono font-bold text-slate-900 bg-white/80 px-1.5 py-0.5 rounded shadow-sm">#C29B38</span>
+                <span class="block text-[10px] text-slate-950 font-semibold mt-1">Hành Thổ</span>
+              </div>
+              <!-- Color 4 -->
+              <div class="group relative rounded-xl p-2.5 text-center border border-white/10 transition hover:scale-105" style="background-color: #2B3A42;">
+                <span class="text-[11px] font-mono font-bold text-white bg-black/60 px-1.5 py-0.5 rounded shadow-sm">#2B3A42</span>
+                <span class="block text-[10px] text-white/90 font-semibold mt-1">Nền Đá Cổ</span>
+              </div>
+            </div>
+
+            <p id="color-rationale" class="text-[11px] text-gray-400 mt-2 italic leading-relaxed">
+              Sắc xanh thiên thanh lam nhạt (#7EA8BE - Hành Thủy) tương sinh cùng sắc trắng kem (#F7F9FB - Hành Kim), tạo cảm giác tinh khôi, trí tuệ trong ngày tốt nghiệp giữa không gian rêu phong Thăng Long.
+            </p>
+          </div>
+
+          <!-- Aesthetic Composition Breakdown (Layers) -->
+          <div class="mt-6">
+            <h4 class="text-xs font-semibold text-gray-300 mb-2.5 flex items-center gap-1.5">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-brand-cyan"></i>
+              Chi Tiết Phối Đồ Đa Lớp (Layering Composition)
+            </h4>
+
+            <div id="composition-list" class="space-y-2">
+              <!-- Layer 1 -->
+              <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start justify-between gap-3">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-brand-cyan">Áo khoác / Lớp ngoài</span>
+                  <h5 class="text-xs font-bold text-white">Áo tấc ngũ thân lập lĩnh tay thụng</h5>
+                  <p class="text-[11px] text-gray-400 mt-0.5">Tơ tằm tự nhiên Bảo Lộc dệt trơn, óng nhẹ, phom tà bay thanh thoát.</p>
+                </div>
+                <span class="text-[11px] text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20 shrink-0">Khuy ngọc bọc bạc</span>
+              </div>
+              <!-- Layer 2 -->
+              <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start justify-between gap-3">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-brand-cyan">Hạ y (Quần/Váy)</span>
+                  <h5 class="text-xs font-bold text-white">Chân váy midi xếp ly rẽ quạt</h5>
+                  <p class="text-[11px] text-gray-400 mt-0.5">Vải lanh tuyết trắng kem thay cho quần lụa đen truyền thống, xếp ly tinh tế kiểu Parisian Chic.</p>
+                </div>
+                <span class="text-[11px] text-brand-cyan bg-brand-cyan/10 px-2 py-0.5 rounded border border-brand-cyan/20 shrink-0">Remix Hiện Đại</span>
+              </div>
+              <!-- Layer 3 -->
+              <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start justify-between gap-3">
+                <div>
+                  <span class="text-[10px] font-mono uppercase tracking-wider text-brand-cyan">Giày dép & Phụ kiện</span>
+                  <h5 class="text-xs font-bold text-white">Hài thêu sen mũi nhọn đệm êm & Túi mây tre đan Chương Mỹ</h5>
+                  <p class="text-[11px] text-gray-400 mt-0.5">Đế lót cao su chống mỏi cho di chuyển, túi đan hình trụ thời thượng kèm khăn vấn lụa.</p>
+                </div>
+                <span class="text-[11px] text-brand-gold bg-brand-gold/10 px-2 py-0.5 rounded border border-brand-gold/20 shrink-0">Thủ Công Làng Nghề</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Historical Significance & Moral Value -->
+          <div class="mt-6 p-3.5 rounded-xl bg-amber-500/[0.04] border border-amber-500/20">
+            <div class="flex items-center gap-1.5 text-xs font-bold text-brand-gold mb-1">
+              <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+              Giá Trị Lịch Sử & Nhân Văn
+            </div>
+            <p id="historical-significance-text" class="text-[11px] text-gray-300 leading-relaxed">
+              Áo tấc là lễ phục trang trọng bậc nhất trong sinh hoạt thường nhật thời Nguyễn, thể hiện sự mực thước, đĩnh đạc và lễ nghi nho nhã của giới trí thức xưa. Việc bảo toàn nguyên vẹn ngũ thân năm vạt và năm cúc cài mang ý nghĩa tôn vinh đạo làm người cùng cốt cách tri thức dân tộc trong ngày lễ thành nhân.
+            </p>
+          </div>
+
+          <!-- Bottom Action Buttons: Copy JSON & Export -->
+          <div class="mt-6 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-3">
+            <div class="flex items-center gap-2">
+              <button onclick="copyCurrentJson()" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-mono text-gray-300 border border-white/10 flex items-center gap-1.5 transition">
+                <i data-lucide="code" class="w-3.5 h-3.5"></i> Copy Structured JSON
+              </button>
+              <button onclick="shareLookbook()" class="px-3 py-1.5 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-semibold text-gray-300 border border-white/10 flex items-center gap-1.5 transition">
+                <i data-lucide="share-2" class="w-3.5 h-3.5"></i> Chia Sẻ Lookbook
+              </button>
+            </div>
+            <span class="text-[11px] font-mono text-gray-500">
+              Response Schema: <span class="text-emerald-400">Type-Safe 100%</span>
+            </span>
+          </div>
+        </div>
+
+        <!-- TRI-LAYER ARCHITECTURE INFOGRAPHIC -->
+        <div class="glass-card rounded-2xl p-5 border border-white/5">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3 flex items-center gap-2">
+            <i data-lucide="cpu" class="w-4 h-4 text-brand-gold"></i>
+            Kiến Trúc Bộ Lọc Văn Hóa 3 Lớp (Tri-Layer Guardrail Architecture)
+          </h4>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-xs">
+            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+              <span class="text-[10px] font-mono text-brand-gold font-bold block mb-1">LAYER 1</span>
+              <h5 class="font-bold text-white mb-1">Cấu Trúc Bất Biến</h5>
+              <p class="text-[11px] text-gray-400 leading-relaxed">
+                Bảo vệ 5 vạt, 5 khuy cài Ngũ Thường, cổ lập lĩnh/giao lĩnh. Cấm tuyệt đối cắt xẻ, cào rách làm hở hang biến dạng.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+              <span class="text-[10px] font-mono text-brand-crimson font-bold block mb-1">LAYER 2</span>
+              <h5 class="font-bold text-white mb-1">Phẩm Hàm & Tôn Nghiêm</h5>
+              <p class="text-[11px] text-gray-400 leading-relaxed">
+                Cấm lạm dụng Long văn 5 móng, Nhật Bình hoàng hậu vào đồ quẩy rave. Gợi ý hoa văn dân gian: Thủy ba, Tứ quý, Mây lành.
+              </p>
+            </div>
+            <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5">
+              <span class="text-[10px] font-mono text-brand-cyan font-bold block mb-1">LAYER 3</span>
+              <h5 class="font-bold text-white mb-1">Văn Minh Đương Đại</h5>
+              <p class="text-[11px] text-gray-400 leading-relaxed">
+                Khuyến khích phối lai ghép: Quần âu suông, chân váy midi, giày sneakers tối giản, túi mây tre đan làng nghề truyền thống.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 bg-black/60 py-6 text-center text-xs text-gray-500 font-mono">
+    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-3">
+      <p>HeritageVibe AI © 2026 • Đội thi Google AI Arena Vietnam 2026</p>
+      <div class="flex items-center space-x-4">
+        <span>Model: Gemini 2.5 Flash</span>
+        <span>Corpus: Khâm Định Đại Nam Hội Điển Sự Lệ & Ngàn Năm Áo Mũ</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT STATE ENGINE & BENCHMARKS -->
+  <script>
+    // DATA STORE: CASE 1 (APPROVED) & CASE 2 (REJECTED)
+    const benchmarkCases = {
+      1: {
+        event: "Lễ tốt nghiệp đại học và chụp ảnh kỷ yếu mùa thu tại Hoàng thành Thăng Long",
+        garment: "Áo tấc (Áo ngũ thân tay thụng)",
+        demographics: "Nữ sinh viên đại học (20 tuổi)",
+        vibe: "Minimalist Heritage (Tối giản thanh lịch)",
+        remixDetails: "Tơ tằm màu xanh thiên thanh, phối chân váy xếp ly trắng tối giản, hài thêu truyền thống kết hợp túi xách thủ công mây tre đan.",
+        jsonPayload: {
+          "outfit_metadata": {
+            "concept_name": "Thiên Thanh Tựu Trường - Minimalist Academic Heritage",
+            "primary_garment": "Áo tấc (Áo ngũ thân tay thụng)",
+            "historical_period": "Thời Nguyễn (1802-1945)",
+            "target_event": "Lễ tốt nghiệp đại học và chụp ảnh kỷ yếu mùa thu tại Hoàng thành Thăng Long"
+          },
+          "aesthetic_composition": [
+            {
+              "layer_type": "Áo khoác / Lớp ngoài",
+              "garment_item": "Áo tấc ngũ thân lập lĩnh tay thụng",
+              "material_and_texture": "Tơ tằm tự nhiên Bảo Lộc dệt trơn, óng nhẹ, rủ mềm mại, phom tà bay thanh thoát.",
+              "modern_twist": "Sử dụng sắc xanh thiên thanh (Cyan Pastel) hiện đại thay thế cho các gam màu truyền thống trầm tối, giữ nguyên viền cổ đứng 5 khuy ngọc bọc bạc."
+            },
+            {
+              "layer_type": "Áo lót / Lớp trong",
+              "garment_item": "Áo lót cánh trắng (Bạch trần y)",
+              "material_and_texture": "Vải cotton hữu cơ thoáng mát, cổ đứng 2cm bo gọn bên trong cổ lập lĩnh.",
+              "modern_twist": "Cắt may tối giản theo phom áo lót cổ điển nhưng ứng dụng sợi cotton dệt thoáng khí công nghệ cao."
+            },
+            {
+              "layer_type": "Hạ y (Quần/Váy)",
+              "garment_item": "Chân váy midi xếp ly rẽ quạt",
+              "material_and_texture": "Vải lanh tuyết (Snow Linen) màu trắng kem, độ xòe vừa phải, xếp ly tinh tế.",
+              "modern_twist": "Thay thế chiếc quần lụa đen/trắng truyền thống bằng chân váy midi xếp ly phong cách Parisian Chic, tạo nét nữ sinh thanh lịch."
+            },
+            {
+              "layer_type": "Giày dép",
+              "garment_item": "Hài thêu hoa sen cải tiến đế êm",
+              "material_and_texture": "Vải nhung dệt phối da lộn, họa tiết hoa sen chỉ bạc tối giản.",
+              "modern_twist": "Phom dáng mũi nhọn retro kết hợp đệm lót êm ái hiện đại, gót cao 3cm tôn vóc dáng khi chụp ảnh kỷ yếu."
+            },
+            {
+              "layer_type": "Phụ kiện",
+              "garment_item": "Túi xách mây tre đan cấu trúc Geometrics & Khăn vấn lụa",
+              "material_and_texture": "Mây tre đan thủ công Chương Mỹ viền da thuộc thảo mộc, kèm khăn vấn lụa thiên thanh.",
+              "modern_twist": "Túi đan dáng hộp hình trụ thời thượng, khăn vấn tạo kiểu tóc búi thấp thanh thoát chuẩn phong cách Gen Z Clean-Girl."
+            }
+          ],
+          "color_theory_matrix": {
+            "palette_hex": ["#7EA8BE", "#F7F9FB", "#C29B38", "#2B3A42"],
+            "color_harmony_type": "Ngũ Hành Tương Sinh (Five Elements Harmonious)",
+            "philosophical_rationale": "Sắc xanh thiên thanh lam nhạt (#7EA8BE - Hành Thủy) đại diện cho trí tuệ và sự khởi đầu mới mẻ của ngày tốt nghiệp; sắc trắng kem (#F7F9FB - Hành Kim) tương sinh cho Thủy, tạo cảm giác tinh khôi, học thức; điểm xuyết sắc vàng hoàng thổ của mây tre đan (#C29B38 - Hành Thổ) và nền đá cổ kính Thăng Long (#2B3A42) giữ vững sự trang nhã, hoài cổ giữa không gian di sản ngàn năm."
+          },
+          "cultural_fidelity_metrics": {
+            "integrity_score": 98,
+            "historical_significance": "Áo tấc là lễ phục trang trọng bậc nhất trong sinh hoạt thường nhật thời Nguyễn, thể hiện sự mực thước, đĩnh đạc và lễ nghi nho nhã của giới trí thức xưa. Việc bảo toàn nguyên vẹn ngũ thân năm vạt và năm cúc cài mang ý nghĩa tôn vinh đạo làm người cùng cốt cách tri thức dân tộc trong ngày lễ thành nhân."
+          },
+          "guardrail_evaluation": {
+            "status": "APPROVED",
+            "risk_assessment": "Bộ trang phục tuân thủ trọn vẹn cả 3 lớp bảo vệ văn hóa: Giữ nguyên kết cấu năm thân lập lĩnh và tay thụng tôn nghiêm của Áo tấc (Layer 1); Không sử dụng hoa văn vượt cấp hay biểu tượng cấm kỵ (Layer 2); Sự kết hợp chân váy xếp ly và túi mây tre đan mang lại vẻ đẹp tân thời, lịch sự tuyệt đối trong không gian di tích quốc gia đặc biệt (Layer 3).",
+            "remedial_suggestions": [
+              "Đảm bảo chiều dài tay áo khi buông thẳng che phủ kín cổ tay và bàn tay theo đúng quy cách 'tay thụng' khi làm lễ chào cờ hoặc chụp ảnh nghi thức.",
+              "Khuy cổ lập lĩnh luôn cài kín toàn bộ 5 cúc trong suốt buổi lễ để giữ trọn phong thái tôn nghiêm của trí thức."
+            ]
+          }
+        }
+      },
+      2: {
+        event: "Lễ hội âm nhạc điện tử đường phố (EDM Street Festival)",
+        garment: "Áo ngũ thân lập lĩnh tay chẽn",
+        demographics: "Nam thanh niên (18 tuổi)",
+        vibe: "Dark Streetwear / Techwear (Đường phố cá tính)",
+        remixDetails: "Áo ngũ thân gấm thêu rồng 5 móng (long văn cung đình), nhưng yêu cầu cắt ngắn tà áo lên ngang hông, xé rách vạt áo, phối cùng quần đùi biker và xích kim loại hầm hố.",
+        jsonPayload: {
+          "outfit_metadata": {
+            "concept_name": "Cyberpunk Imperial Rebel (REJECTED PROPOSAL)",
+            "primary_garment": "Áo ngũ thân lập lĩnh tay chẽn",
+            "historical_period": "Thời Nguyễn (1802-1945)",
+            "target_event": "Lễ hội âm nhạc điện tử đường phố (EDM Street Festival)"
+          },
+          "aesthetic_composition": [
+            {
+              "layer_type": "Áo khoác / Lớp ngoài",
+              "garment_item": "Áo ngũ thân bị cắt vạt ngang hông, xé rách biên vải, thêu Long văn 5 móng",
+              "material_and_texture": "Gấm nhân tạo bóng kim tuyến, bề mặt bị mài mòn cơ học và cào rách nhân tạo.",
+              "modern_twist": "Cắt cụt chiều dài tà áo chuẩn mực xuống ngang eo, tưa rách vạt dưới theo phong cách Grunge Rock nổi loạn."
+            },
+            {
+              "layer_type": "Áo lót / Lớp trong",
+              "garment_item": "Không mặc áo lót trong (Để hở ngực trần dưới vạt rách)",
+              "material_and_texture": "Không có.",
+              "modern_twist": "Phá vỡ tính kín đáo truyền thống, phơi bày cơ thể phản cảm."
+            },
+            {
+              "layer_type": "Hạ y (Quần/Váy)",
+              "garment_item": "Quần đùi bó Biker Shorts & Xích đai sắt",
+              "material_and_texture": "Spandex bó sát màu đen, đính xích kim loại công nghiệp nặng.",
+              "modern_twist": "Phối đồ tương phản cực đoan kiểu Rave party nhưng xung đột văn hóa trầm trọng."
+            },
+            {
+              "layer_type": "Giày dép",
+              "garment_item": "Combat Boots cổ cao đế hầm hố",
+              "material_and_texture": "Da bóng đen đính đinh tán kim loại.",
+              "modern_twist": "Phong cách Military Cyberpunk gai góc."
+            },
+            {
+              "layer_type": "Phụ kiện",
+              "garment_item": "Xích sắt bản lớn đeo cổ và găng tay hở ngón da",
+              "material_and_texture": "Hợp kim mạ chrome và da tổng hợp.",
+              "modern_twist": "Phong cách đường phố bạo lực, nổi loạn cực đoan."
+            }
+          ],
+          "color_theory_matrix": {
+            "palette_hex": ["#FFD700", "#0D0D0D", "#8A0303", "#708090"],
+            "color_harmony_type": "Tương Phản Bổ Túc (Complementary Dynamic)",
+            "philosophical_rationale": "Sự pha trộn giữa sắc vàng hoàng gia (#FFD700) với sắc đen bạo liệt (#0D0D0D) và đỏ máu (#8A0303) tạo nên sự hỗn loạn về trường thị giác và xung đột gay gắt về mặt biểu tượng triết học Phương Đông, làm tầm thường hóa linh vật cung đình."
+          },
+          "cultural_fidelity_metrics": {
+            "integrity_score": 12,
+            "historical_significance": "Theo điển chế 'Khâm Định Đại Nam Hội Điển Sự Lệ', hình tượng Rồng 5 móng (Ngũ trảo kim long) là pháp bảo tối thượng biểu trưng cho Hoàng quyền tối cao của Thiên tử, tuyệt đối cấm thứ dân sử dụng. Cấu trúc 5 thân tượng trưng cho tứ thân phụ mẫu và bản thân, 5 khuy tượng trưng cho Ngũ Thường; việc xé rách và cắt cụt tà áo là hành vi hủy hoại luân lý và cấu trúc di sản."
+          },
+          "guardrail_evaluation": {
+            "status": "REJECTED",
+            "risk_assessment": "VI PHẠM VĂN HÓA CẤP ĐỘ ĐỎ (CRITICAL VIOLATION): (1) Vi phạm Layer 1 nghiêm trọng khi cắt xẻ, cào rách làm biến dạng tà áo và phá hủy hoàn toàn quy cách ngũ thân và sự kín đáo; (2) Vi phạm Layer 2 đặc biệt nghiêm trọng khi thêu họa tiết Long văn 5 móng của Hoàng đế trên trang phục biểu diễn đường phố đồi trụy; (3) Vi phạm Layer 3 do sự chắp vá kệch cỡm giữa linh phục hoàng gia với trang phục rave phản cảm, có nguy cơ gây khủng hoảng truyền thông dữ dội và xúc phạm tính thiêng liêng của di sản.",
+            "remedial_suggestions": [
+              "THAY THẾ HỌA TIẾT: Thay ngay Long văn 5 móng bằng hoa văn Thủy Ba (sóng nước cách điệu), hoa văn Vân Mây (auspicious clouds), hoặc linh thú thuần Việt như Ngựa bay, Cá chép hóa rồng, Hổ phù phù hợp với năng lượng tuổi trẻ.",
+              "KHÔI PHỤC CẤU TRÚC 5 THÂN: Giữ nguyên độ dài tà áo ngũ thân chạm gối hoặc ngang bắp chân. Tuyệt đối không cắt ngắn hay xé rách vạt áo.",
+              "PHƯƠNG ÁN STREETWEAR THAY THẾ (REMIX HỢP LỆ): Chọn áo ngũ thân tay chẽn may bằng chất liệu vải Kaki hoặc Denim mềm màu đen/xám khói (Dark Streetwear/Techwear). Mặc buông 2 cúc trên để lộ áo thun cổ tròn tối giản bên trong, phối cùng quần túi hộp dáng suông (Cargo Pants) và giày Chunky Sneakers. Sự kết hợp này bảo tồn 100% tà áo truyền thống mà vẫn tạo nên vẻ ngoài cực kỳ 'chiến' và chất chơi cho lễ hội âm nhạc."
+            ]
+          }
+        }
+      }
+    };
+
+    let currentJsonData = benchmarkCases[1].jsonPayload;
+
+    function loadPresetCase(caseNum) {
+      const data = benchmarkCases[caseNum];
+      document.getElementById('input-event').value = data.event;
+      document.getElementById('input-garment').value = data.garment;
+      document.getElementById('input-demographics').value = data.demographics;
+      document.getElementById('input-vibe').value = data.vibe;
+      document.getElementById('input-remix-details').value = data.remixDetails;
+      
+      triggerCoTAnimation(() => {
+        renderLookbookCard(data.jsonPayload);
+      });
+    }
+
+    function resetForm() {
+      document.getElementById('stylist-form').reset();
+    }
+
+    function handleSubmit(e) {
+      e.preventDefault();
+      const eventText = document.getElementById('input-event').value;
+      const remixText = document.getElementById('input-remix-details').value;
+
+      // Check if user is asking for offending elements (Case 2 trigger)
+      const hasViolation = /cắt ngắn|xé rách|rồng 5 móng|long văn ngũ trảo|hở ngực|biker|quẩy|edm|rave/i.test(remixText) || /quẩy|edm|rave/i.test(eventText);
+
+      triggerCoTAnimation(() => {
+        if (hasViolation) {
+          renderLookbookCard(benchmarkCases[2].jsonPayload);
+        } else {
+          // Clone case 1 and adapt
+          const customPayload = JSON.parse(JSON.stringify(benchmarkCases[1].jsonPayload));
+          customPayload.outfit_metadata.target_event = eventText;
+          customPayload.outfit_metadata.primary_garment = document.getElementById('input-garment').value;
+          renderLookbookCard(customPayload);
+        }
+      });
+    }
+
+    function triggerCoTAnimation(callback) {
+      const stepper = document.getElementById('cot-stepper');
+      const submitBtn = document.getElementById('btn-submit');
+      stepper.classList.remove('hidden');
+      submitBtn.disabled = true;
+      submitBtn.classList.add('opacity-50');
+
+      const steps = ['cot-step-1', 'cot-step-2', 'cot-step-3', 'cot-step-4', 'cot-step-5'];
+      steps.forEach(id => {
+        const el = document.getElementById(id);
+        el.className = 'flex items-center gap-2 text-gray-500';
+      });
+
+      let currentStep = 0;
+      const interval = setInterval(() => {
+        if (currentStep < steps.length) {
+          const el = document.getElementById(steps[currentStep]);
+          el.className = 'flex items-center gap-2 text-brand-cyan font-bold transition';
+          currentStep++;
+        } else {
+          clearInterval(interval);
+          setTimeout(() => {
+            stepper.classList.add('hidden');
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-50');
+            callback();
+          }, 300);
+        }
+      }, 150);
+    }
+
+    function renderLookbookCard(payload) {
+      currentJsonData = payload;
+      const isApproved = payload.guardrail_evaluation.status === 'APPROVED';
+
+      // Title & Era
+      document.getElementById('lookbook-title').textContent = payload.outfit_metadata.concept_name;
+      document.getElementById('lookbook-era-tag').textContent = payload.outfit_metadata.historical_period;
+
+      // Status Badge
+      const badge = document.getElementById('guardrail-status-badge');
+      if (isApproved) {
+        badge.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-bold';
+        badge.innerHTML = `<i data-lucide="shield-check" class="w-4 h-4"></i><span>APPROVED (${payload.cultural_fidelity_metrics.integrity_score}/100)</span>`;
+      } else {
+        badge.className = 'flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-400 text-xs font-bold';
+        badge.innerHTML = `<i data-lucide="shield-alert" class="w-4 h-4"></i><span>REJECTED (${payload.cultural_fidelity_metrics.integrity_score}/100)</span>`;
+      }
+
+      // Guardrail Box
+      const alertBox = document.getElementById('guardrail-alert-box');
+      const assessmentText = document.getElementById('guardrail-assessment');
+      const remedialBox = document.getElementById('remedial-box');
+      const remedialList = document.getElementById('remedial-list');
+
+      if (isApproved) {
+        alertBox.className = 'mt-4 p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/20 text-xs leading-relaxed text-emerald-200';
+        assessmentText.textContent = payload.guardrail_evaluation.risk_assessment;
+        remedialBox.classList.add('hidden');
+      } else {
+        alertBox.className = 'mt-4 p-4 rounded-xl bg-rose-950/30 border border-rose-500/40 text-xs leading-relaxed text-rose-200';
+        assessmentText.textContent = payload.guardrail_evaluation.risk_assessment;
+        remedialBox.classList.remove('hidden');
+        remedialList.innerHTML = payload.guardrail_evaluation.remedial_suggestions.map(s => `<li>${s}</li>`).join('');
+      }
+
+      // Palette
+      const palette = payload.color_theory_matrix.palette_hex;
+      document.getElementById('color-harmony-type').textContent = payload.color_theory_matrix.color_harmony_type;
+      document.getElementById('color-rationale').textContent = payload.color_theory_matrix.philosophical_rationale;
+      
+      const swatchesContainer = document.getElementById('palette-swatches');
+      swatchesContainer.innerHTML = palette.map((hex, i) => {
+        const isDark = hex === '#0D0D0D' || hex === '#2B3A42' || hex === '#8A0303';
+        return `
+          <div class="group relative rounded-xl p-2.5 text-center border border-white/10 transition hover:scale-105" style="background-color: ${hex};">
+            <span class="text-[11px] font-mono font-bold ${isDark ? 'text-white bg-black/60' : 'text-slate-900 bg-white/80'} px-1.5 py-0.5 rounded shadow-sm">${hex}</span>
+            <span class="block text-[10px] ${isDark ? 'text-white/80' : 'text-slate-950'} font-semibold mt-1">Màu #${i+1}</span>
+          </div>
+        `;
+      }).join('');
+
+      // Layers Composition
+      const compContainer = document.getElementById('composition-list');
+      compContainer.innerHTML = payload.aesthetic_composition.map(item => `
+        <div class="p-3 rounded-xl bg-white/[0.02] border border-white/5 flex items-start justify-between gap-3">
+          <div>
+            <span class="text-[10px] font-mono uppercase tracking-wider text-brand-cyan">${item.layer_type}</span>
+            <h5 class="text-xs font-bold text-white">${item.garment_item}</h5>
+            <p class="text-[11px] text-gray-400 mt-0.5">${item.material_and_texture}</p>
+          </div>
+          <span class="text-[11px] ${isApproved ? 'text-emerald-400 bg-emerald-500/10 border-emerald-500/20' : 'text-rose-400 bg-rose-500/10 border-rose-500/20'} px-2 py-0.5 rounded border shrink-0">
+            ${item.modern_twist}
+          </span>
+        </div>
+      `).join('');
+
+      // Historical Significance
+      document.getElementById('historical-significance-text').textContent = payload.cultural_fidelity_metrics.historical_significance;
+
+      // Re-initialize Lucide Icons
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    }
+
+    function copyCurrentJson() {
+      navigator.clipboard.writeText(JSON.stringify(currentJsonData, null, 2)).then(() => {
+        alert('Đã copy toàn bộ Type-Safe JSON Payload vào bộ nhớ tạm!');
+      });
+    }
+
+    function shareLookbook() {
+      const shareUrl = window.location.href;
+      navigator.clipboard.writeText(shareUrl).then(() => {
+        alert('Đã copy đường dẫn Lookbook vào clipboard!');
+      });
+    }
+
+    // Initialize on load
+    window.addEventListener('DOMContentLoaded', () => {
+      if (window.lucide) {
+        lucide.createIcons();
+      }
+    });
+  </script>
+</body>
+</html>

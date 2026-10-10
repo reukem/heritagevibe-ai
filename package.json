@@ -1,0 +1,12 @@
+{
+  "name": "heritagevibe-ai",
+  "version": "1.0.0",
+  "description": "Việt Phục Remix Engine — Google AI Arena Vietnam 2026 Audition",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "keywords": ["viet-phuc", "heritage-ai", "gemini-flash", "google-ai-arena"],
+  "author": "Aki (Ngô Minh Thiên Bảo)",
+  "license": "MIT"
+}
