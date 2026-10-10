@@ -29,7 +29,7 @@
               red: '#DC2626',
               cyan: '#38BDF8',
               jade: '#0D9488',
-              dark: '#070B14',
+              dark: '#060911',
               card: '#0F172A',
               border: '#1E293B',
             }
@@ -70,10 +70,10 @@
       background-attachment: fixed;
     }
     .glass-card {
-      background: rgba(15, 23, 42, 0.85);
+      background: rgba(15, 23, 42, 0.88);
       backdrop-filter: blur(20px);
       -webkit-backdrop-filter: blur(20px);
-      border: 1px solid rgba(212, 175, 55, 0.18);
+      border: 1px solid rgba(212, 175, 55, 0.22);
     }
     .gold-gradient-text {
       background: linear-gradient(135deg, #FFFBEB 0%, #FDE68A 25%, #D4AF37 60%, #B45309 100%);
@@ -90,16 +90,10 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    /* Vietnamese Imperial Border Pattern */
-    .viet-border {
-      border-image: linear-gradient(to bottom right, #D4AF37, #991B1B, #38BDF8) 1;
-    }
-    /* Ancient Lacquer Texture */
     .lacquer-surface {
-      background: linear-gradient(180deg, rgba(20, 15, 25, 0.9) 0%, rgba(10, 15, 26, 0.95) 100%);
+      background: linear-gradient(180deg, rgba(20, 15, 25, 0.92) 0%, rgba(10, 15, 26, 0.96) 100%);
       box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 20px 40px rgba(0, 0, 0, 0.8);
     }
-    /* Custom Scrollbar */
     .custom-scrollbar::-webkit-scrollbar {
       width: 6px;
     }
@@ -114,378 +108,30 @@
   <!-- BACKGROUND FLOATING GOLD EMBERS CANVAS -->
   <canvas id="ember-canvas" class="fixed inset-0 pointer-events-none z-0 opacity-40"></canvas>
 
-  <!-- BACKGROUND ROTATING TRỐNG ĐỒNG ĐÔNG SƠN (CENTRAL CULTURAL WATERMARK) -->
-  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] sm:w-[850px] sm:h-[850px] pointer-events-none z-0 animate-spin-slow opacity-15">
-    <svg viewBox="0 0 600 600" class="w-full h-full text-brand-gold" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-
-      <defs>
-        <radialGradient id="drumGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.35"/>
-          <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="300.0" cy="300.0" r="288.0" fill="url(#drumGlow)" stroke="none"/>
-    
-<circle cx="300.0" cy="300.0" r="288.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="276.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="264.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="228.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="216.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="180.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="168.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="132.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="120.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="78.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="24.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<polygon points="300.0,222.0 306.0,273.7 333.8,229.7 316.8,278.9 361.0,251.4 324.3,288.3 376.0,282.6 327.0,300.0 376.0,317.4 324.3,311.7 361.0,348.6 316.8,321.1 333.8,370.3 306.0,326.3 300.0,378.0 294.0,326.3 266.2,370.3 283.2,321.1 239.0,348.6 275.7,311.7 224.0,317.4 273.0,300.0 224.0,282.6 275.7,288.3 239.0,251.4 283.2,278.9 266.2,229.7 294.0,273.7" fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="2"/>
-<circle cx="300.0" cy="300.0" r="15.0" fill="#D4AF37" fill-opacity="0.6"/>
-<polygon points="430.8,300.0 422.8,306.9 430.0,314.6 421.3,320.6 427.5,329.1 418.2,334.1 423.5,343.2 413.6,347.1 417.8,356.8 407.7,359.5 410.8,369.6 400.3,371.2 402.3,381.6 391.7,382.0 392.5,392.5 382.0,391.7 381.6,402.3 371.2,400.3 369.6,410.8 359.5,407.7 356.8,417.8 347.1,413.6 343.2,423.5 334.1,418.2 329.1,427.5 320.6,421.3 314.6,430.0 306.9,422.8 300.0,430.8 293.1,422.8 285.4,430.0 279.4,421.3 270.9,427.5 265.9,418.2 256.8,423.5 252.9,413.6 243.2,417.8 240.5,407.7 230.4,410.8 228.8,400.3 218.4,402.3 218.0,391.7 207.5,392.5 208.3,382.0 197.7,381.6 199.7,371.2 189.2,369.6 192.3,359.5 182.2,356.8 186.4,347.1 176.5,343.2 181.8,334.1 172.5,329.1 178.7,320.6 170.0,314.6 177.2,306.9 169.2,300.0 177.2,293.1 170.0,285.4 178.7,279.4 172.5,270.9 181.8,265.9 176.5,256.8 186.4,252.9 182.2,243.2 192.3,240.5 189.2,230.4 199.7,228.8 197.7,218.4 208.3,218.0 207.5,207.5 218.0,208.3 218.4,197.7 228.8,199.7 230.4,189.2 240.5,192.3 243.2,182.2 252.9,186.4 256.8,176.5 265.9,181.8 270.9,172.5 279.4,178.7 285.4,170.0 293.1,177.2 300.0,169.2 306.9,177.2 314.6,170.0 320.6,178.7 329.1,172.5 334.1,181.8 343.2,176.5 347.1,186.4 356.8,182.2 359.5,192.3 369.6,189.2 371.2,199.7 381.6,197.7 382.0,208.3 392.5,207.5 391.7,218.0 402.3,218.4 400.3,228.8 410.8,230.4 407.7,240.5 417.8,243.2 413.6,252.9 423.5,256.8 418.2,265.9 427.5,270.9 421.3,279.4 430.0,285.4 422.8,293.1" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.6"/>
-<g transform="rotate(0.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(45.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(90.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(135.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(180.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(225.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(270.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(315.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<polygon points="574.2,300.0 565.5,313.0 572.9,326.9 562.9,339.0 568.9,353.5 557.8,364.6 562.4,379.6 550.3,389.5 553.3,404.9 540.3,413.6 541.8,429.3 528.0,436.6 528.0,452.3 513.5,458.3 512.0,474.0 496.9,478.5 493.9,493.9 478.5,496.9 474.0,512.0 458.3,513.5 452.3,528.0 436.6,528.0 429.3,541.8 413.6,540.3 404.9,553.3 389.5,550.3 379.6,562.4 364.6,557.8 353.5,568.9 339.0,562.9 326.9,572.9 313.0,565.5 300.0,574.2 287.0,565.5 273.1,572.9 261.0,562.9 246.5,568.9 235.4,557.8 220.4,562.4 210.5,550.3 195.1,553.3 186.4,540.3 170.7,541.8 163.4,528.0 147.7,528.0 141.7,513.5 126.0,512.0 121.5,496.9 106.1,493.9 103.1,478.5 88.0,474.0 86.5,458.3 72.0,452.3 72.0,436.6 58.2,429.3 59.7,413.6 46.7,404.9 49.7,389.5 37.6,379.6 42.2,364.6 31.1,353.5 37.1,339.0 27.1,326.9 34.5,313.0 25.8,300.0 34.5,287.0 27.1,273.1 37.1,261.0 31.1,246.5 42.2,235.4 37.6,220.4 49.7,210.5 46.7,195.1 59.7,186.4 58.2,170.7 72.0,163.4 72.0,147.7 86.5,141.7 88.0,126.0 103.1,121.5 106.1,106.1 121.5,103.1 126.0,88.0 141.7,86.5 147.7,72.0 163.4,72.0 170.7,58.2 186.4,59.7 195.1,46.7 210.5,49.7 220.4,37.6 235.4,42.2 246.5,31.1 261.0,37.1 273.1,27.1 287.0,34.5 300.0,25.8 313.0,34.5 326.9,27.1 339.0,37.1 353.5,31.1 364.6,42.2 379.6,37.6 389.5,49.7 404.9,46.7 413.6,59.7 429.3,58.2 436.6,72.0 452.3,72.0 458.3,86.5 474.0,88.0 478.5,103.1 493.9,106.1 496.9,121.5 512.0,126.0 513.5,141.7 528.0,147.7 528.0,163.4 541.8,170.7 540.3,186.4 553.3,195.1 550.3,210.5 562.4,220.4 557.8,235.4 568.9,246.5 562.9,261.0 572.9,273.1 565.5,287.0" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.5"/>
-</svg>
+  <!-- AUTHENTIC ROTATING TRỐNG ĐỒNG NGỌC LŨ (CENTER WATERMARK) -->
+  <div class="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[650px] sm:w-[800px] sm:h-[800px] pointer-events-none z-0 animate-spin-slow opacity-20">
+    <img src="assets/trong_dong_authentic_gold.png" alt="Trống Đồng Ngọc Lũ Khảo Cổ" class="w-full h-full object-contain filter drop-shadow-[0_0_35px_rgba(212,175,55,0.3)]" />
   </div>
 
-  <!-- SECONDARY REVERSE-ROTATING DRUM (TOP-RIGHT) -->
-  <div class="fixed -top-40 -right-40 w-[500px] h-[500px] pointer-events-none z-0 animate-spin-reverse-slow opacity-10">
-    <svg viewBox="0 0 600 600" class="w-full h-full text-brand-gold" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <!-- SECONDARY REVERSE-ROTATING TRỐNG ĐỒNG SÔNG ĐÀ (TOP-RIGHT) -->
+  <div class="fixed -top-32 -right-32 w-[480px] h-[480px] pointer-events-none z-0 animate-spin-reverse-slow opacity-12">
+    <img src="assets/trong_dong_song_da_gold.png" alt="Trống Đồng Sông Đà" class="w-full h-full object-contain filter drop-shadow-[0_0_20px_rgba(212,175,55,0.2)]" />
+  </div>
 
-      <defs>
-        <radialGradient id="drumGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.35"/>
-          <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="300.0" cy="300.0" r="288.0" fill="url(#drumGlow)" stroke="none"/>
-    
-<circle cx="300.0" cy="300.0" r="288.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="276.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="264.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="228.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="216.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="180.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="168.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="132.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="120.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="78.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="300.0" cy="300.0" r="24.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<polygon points="300.0,222.0 306.0,273.7 333.8,229.7 316.8,278.9 361.0,251.4 324.3,288.3 376.0,282.6 327.0,300.0 376.0,317.4 324.3,311.7 361.0,348.6 316.8,321.1 333.8,370.3 306.0,326.3 300.0,378.0 294.0,326.3 266.2,370.3 283.2,321.1 239.0,348.6 275.7,311.7 224.0,317.4 273.0,300.0 224.0,282.6 275.7,288.3 239.0,251.4 283.2,278.9 266.2,229.7 294.0,273.7" fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="2"/>
-<circle cx="300.0" cy="300.0" r="15.0" fill="#D4AF37" fill-opacity="0.6"/>
-<polygon points="430.8,300.0 422.8,306.9 430.0,314.6 421.3,320.6 427.5,329.1 418.2,334.1 423.5,343.2 413.6,347.1 417.8,356.8 407.7,359.5 410.8,369.6 400.3,371.2 402.3,381.6 391.7,382.0 392.5,392.5 382.0,391.7 381.6,402.3 371.2,400.3 369.6,410.8 359.5,407.7 356.8,417.8 347.1,413.6 343.2,423.5 334.1,418.2 329.1,427.5 320.6,421.3 314.6,430.0 306.9,422.8 300.0,430.8 293.1,422.8 285.4,430.0 279.4,421.3 270.9,427.5 265.9,418.2 256.8,423.5 252.9,413.6 243.2,417.8 240.5,407.7 230.4,410.8 228.8,400.3 218.4,402.3 218.0,391.7 207.5,392.5 208.3,382.0 197.7,381.6 199.7,371.2 189.2,369.6 192.3,359.5 182.2,356.8 186.4,347.1 176.5,343.2 181.8,334.1 172.5,329.1 178.7,320.6 170.0,314.6 177.2,306.9 169.2,300.0 177.2,293.1 170.0,285.4 178.7,279.4 172.5,270.9 181.8,265.9 176.5,256.8 186.4,252.9 182.2,243.2 192.3,240.5 189.2,230.4 199.7,228.8 197.7,218.4 208.3,218.0 207.5,207.5 218.0,208.3 218.4,197.7 228.8,199.7 230.4,189.2 240.5,192.3 243.2,182.2 252.9,186.4 256.8,176.5 265.9,181.8 270.9,172.5 279.4,178.7 285.4,170.0 293.1,177.2 300.0,169.2 306.9,177.2 314.6,170.0 320.6,178.7 329.1,172.5 334.1,181.8 343.2,176.5 347.1,186.4 356.8,182.2 359.5,192.3 369.6,189.2 371.2,199.7 381.6,197.7 382.0,208.3 392.5,207.5 391.7,218.0 402.3,218.4 400.3,228.8 410.8,230.4 407.7,240.5 417.8,243.2 413.6,252.9 423.5,256.8 418.2,265.9 427.5,270.9 421.3,279.4 430.0,285.4 422.8,293.1" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.6"/>
-<g transform="rotate(0.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(45.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(90.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(135.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(180.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(225.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(270.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(315.0 300.0 300.0)">
-
-          <path d="M 265.0 104.0 
-                   C 275.0 84.0, 305.0 87.0, 335.0 92.0
-                   C 365.0 97.0, 395.0 90.0, 415.0 87.0
-                   C 385.0 100.0, 355.0 107.0, 325.0 106.0
-                   C 295.0 105.0, 275.0 110.0, 265.0 104.0 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 305.0 87.0 
-                   C 315.0 60.0, 345.0 54.0, 365.0 62.0
-                   C 345.0 72.0, 325.0 84.0, 315.0 90.0 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 265.0 104.0 L 245.0 108.0 L 267.0 100.0 Z" fill="#D4AF37" />
-          <path d="M 272.0 90.0 Q 262.0 80.0 252.0 84.0" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<polygon points="574.2,300.0 565.5,313.0 572.9,326.9 562.9,339.0 568.9,353.5 557.8,364.6 562.4,379.6 550.3,389.5 553.3,404.9 540.3,413.6 541.8,429.3 528.0,436.6 528.0,452.3 513.5,458.3 512.0,474.0 496.9,478.5 493.9,493.9 478.5,496.9 474.0,512.0 458.3,513.5 452.3,528.0 436.6,528.0 429.3,541.8 413.6,540.3 404.9,553.3 389.5,550.3 379.6,562.4 364.6,557.8 353.5,568.9 339.0,562.9 326.9,572.9 313.0,565.5 300.0,574.2 287.0,565.5 273.1,572.9 261.0,562.9 246.5,568.9 235.4,557.8 220.4,562.4 210.5,550.3 195.1,553.3 186.4,540.3 170.7,541.8 163.4,528.0 147.7,528.0 141.7,513.5 126.0,512.0 121.5,496.9 106.1,493.9 103.1,478.5 88.0,474.0 86.5,458.3 72.0,452.3 72.0,436.6 58.2,429.3 59.7,413.6 46.7,404.9 49.7,389.5 37.6,379.6 42.2,364.6 31.1,353.5 37.1,339.0 27.1,326.9 34.5,313.0 25.8,300.0 34.5,287.0 27.1,273.1 37.1,261.0 31.1,246.5 42.2,235.4 37.6,220.4 49.7,210.5 46.7,195.1 59.7,186.4 58.2,170.7 72.0,163.4 72.0,147.7 86.5,141.7 88.0,126.0 103.1,121.5 106.1,106.1 121.5,103.1 126.0,88.0 141.7,86.5 147.7,72.0 163.4,72.0 170.7,58.2 186.4,59.7 195.1,46.7 210.5,49.7 220.4,37.6 235.4,42.2 246.5,31.1 261.0,37.1 273.1,27.1 287.0,34.5 300.0,25.8 313.0,34.5 326.9,27.1 339.0,37.1 353.5,31.1 364.6,42.2 379.6,37.6 389.5,49.7 404.9,46.7 413.6,59.7 429.3,58.2 436.6,72.0 452.3,72.0 458.3,86.5 474.0,88.0 478.5,103.1 493.9,106.1 496.9,121.5 512.0,126.0 513.5,141.7 528.0,147.7 528.0,163.4 541.8,170.7 540.3,186.4 553.3,195.1 550.3,210.5 562.4,220.4 557.8,235.4 568.9,246.5 562.9,261.0 572.9,273.1 565.5,287.0" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.5"/>
-</svg>
+  <!-- FLOATING VIETNAMESE PHOENIX WATERMARK (TOP-LEFT BACKGROUND) -->
+  <div class="fixed top-24 -left-20 w-[420px] h-[420px] pointer-events-none z-0 opacity-10 animate-float-slow">
+    <img src="assets/phuong_hoang_gold_transparent.png" alt="Phượng Hoàng Đại Việt" class="w-full h-full object-contain" />
   </div>
 
   <!-- TOP HEADER -->
-  <header class="border-b border-brand-gold/20 bg-black/70 backdrop-blur-md sticky top-0 z-50">
+  <header class="border-b border-brand-gold/25 bg-black/75 backdrop-blur-md sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between relative z-10">
       
-      <!-- Brand & Vietnamese Phoenix Crest -->
+      <!-- Brand & Authentic Vietnamese Phoenix Crest -->
       <div class="flex items-center space-x-3.5">
         <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-gold via-amber-500 to-brand-crimson p-0.5 shadow-lg shadow-brand-gold/20 flex items-center justify-center">
-          <div class="w-full h-full bg-[#080C16] rounded-[10px] flex items-center justify-center p-1.5">
-            <svg viewBox="0 0 48 48" class="w-full h-full text-brand-gold" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <!-- Vietnamese Phoenix / Chim Lac Silhouette -->
-  <path d="M 12 28 C 15 20, 24 16, 32 18 C 38 19, 42 16, 44 12 C 40 18, 36 24, 28 26 C 22 28, 16 32, 10 38 C 12 34, 11 30, 12 28 Z" fill="currentColor" fill-opacity="0.3" stroke-width="1.5"/>
-  <!-- Elegant Wing Spread -->
-  <path d="M 22 20 C 26 12, 34 8, 42 6 C 36 12, 32 18, 28 22" stroke-width="2" stroke-linecap="round"/>
-  <path d="M 20 23 C 23 16, 30 13, 37 11 C 32 16, 28 20, 25 24" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Beak and Crown Crest -->
-  <path d="M 12 28 L 6 30 L 11 26 Z" fill="currentColor"/>
-  <path d="M 12 26 Q 9 20, 5 21" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M 13 25 Q 11 17, 8 16" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Trailing Plumes / Duoi Phuong -->
-  <path d="M 10 38 Q 16 42, 24 44" stroke-width="1.5" stroke-dasharray="2 2" stroke-linecap="round"/>
-  <path d="M 10 38 Q 14 45, 20 46" stroke-width="1.5" stroke-dasharray="2 2" stroke-linecap="round"/>
-</svg>
+          <div class="w-full h-full bg-[#080C16] rounded-[10px] flex items-center justify-center p-1 overflow-hidden">
+            <img src="assets/phuong_hoang_gold_transparent.png" alt="Phượng Hoàng Lê - Nguyễn" class="w-full h-full object-contain transform scale-110" />
           </div>
         </div>
         <div>
@@ -495,8 +141,8 @@
             </h1>
             <span class="text-[11px] text-amber-200/60 hidden sm:inline-block">| Việt Phục Remix Engine</span>
           </div>
-          <p class="text-[10px] text-gray-400 font-mono flex items-center gap-1">
-            <span>Trống Đồng Đông Sơn</span> • <span>Chim Lạc & Phượng Hoàng</span> • <span>Gemini 2.5 Flash</span>
+          <p class="text-[10px] text-gray-400 font-mono flex items-center gap-1.5">
+            <span>Trống Đồng Ngọc Lũ</span> • <span>Chim Lạc Cổ</span> • <span>Phượng Hoàng Đại Việt</span>
           </p>
         </div>
       </div>
@@ -525,182 +171,11 @@
   <!-- HERO SECTION WITH EAST-ASIAN VIETNAMESE MAJESTY -->
   <section class="pt-10 pb-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center relative z-10">
     
-    <!-- Cultural Heritage Badge -->
-    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-gold/10 via-brand-crimson/10 to-brand-gold/10 border border-brand-gold/30 text-xs text-amber-200 mb-5 shadow-lg shadow-brand-gold/5">
-      <span class="w-4 h-4 text-brand-gold inline-flex items-center justify-center">
-        <svg viewBox="0 0 80 80" class="w-full h-full text-brand-gold" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-
-      <defs>
-        <radialGradient id="drumGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.35"/>
-          <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="40.0" cy="40.0" r="38.4" fill="url(#drumGlow)" stroke="none"/>
-    
-<circle cx="40.0" cy="40.0" r="38.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="36.8" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="35.2" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="30.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="28.8" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="24.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="22.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="17.6" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="16.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="10.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="3.2" stroke-width="1.5" stroke-opacity="0.7"/>
-<polygon points="40.0,29.6 40.8,36.5 44.5,30.6 42.2,37.2 48.1,33.5 43.2,38.4 50.1,37.7 43.6,40.0 50.1,42.3 43.2,41.6 48.1,46.5 42.2,42.8 44.5,49.4 40.8,43.5 40.0,50.4 39.2,43.5 35.5,49.4 37.8,42.8 31.9,46.5 36.8,41.6 29.9,42.3 36.4,40.0 29.9,37.7 36.8,38.4 31.9,33.5 37.8,37.2 35.5,30.6 39.2,36.5" fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="2"/>
-<circle cx="40.0" cy="40.0" r="2.0" fill="#D4AF37" fill-opacity="0.6"/>
-<polygon points="57.4,40.0 56.4,40.9 57.3,42.0 56.2,42.7 57.0,43.9 55.8,44.5 56.5,45.8 55.2,46.3 55.7,47.6 54.4,47.9 54.8,49.3 53.4,49.5 53.6,50.9 52.2,50.9 52.3,52.3 50.9,52.2 50.9,53.6 49.5,53.4 49.3,54.8 47.9,54.4 47.6,55.7 46.3,55.2 45.8,56.5 44.5,55.8 43.9,57.0 42.7,56.2 42.0,57.3 40.9,56.4 40.0,57.4 39.1,56.4 38.0,57.3 37.3,56.2 36.1,57.0 35.5,55.8 34.2,56.5 33.7,55.2 32.4,55.7 32.1,54.4 30.7,54.8 30.5,53.4 29.1,53.6 29.1,52.2 27.7,52.3 27.8,50.9 26.4,50.9 26.6,49.5 25.2,49.3 25.6,47.9 24.3,47.6 24.8,46.3 23.5,45.8 24.2,44.5 23.0,43.9 23.8,42.7 22.7,42.0 23.6,40.9 22.6,40.0 23.6,39.1 22.7,38.0 23.8,37.3 23.0,36.1 24.2,35.5 23.5,34.2 24.8,33.7 24.3,32.4 25.6,32.1 25.2,30.7 26.6,30.5 26.4,29.1 27.8,29.1 27.7,27.7 29.1,27.8 29.1,26.4 30.5,26.6 30.7,25.2 32.1,25.6 32.4,24.3 33.7,24.8 34.2,23.5 35.5,24.2 36.1,23.0 37.3,23.8 38.0,22.7 39.1,23.6 40.0,22.6 40.9,23.6 42.0,22.7 42.7,23.8 43.9,23.0 44.5,24.2 45.8,23.5 46.3,24.8 47.6,24.3 47.9,25.6 49.3,25.2 49.5,26.6 50.9,26.4 50.9,27.8 52.3,27.7 52.2,29.1 53.6,29.1 53.4,30.5 54.8,30.7 54.4,32.1 55.7,32.4 55.2,33.7 56.5,34.2 55.8,35.5 57.0,36.1 56.2,37.3 57.3,38.0 56.4,39.1" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.6"/>
-<g transform="rotate(0.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(45.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(90.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(135.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(180.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(225.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(270.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(315.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<polygon points="76.6,40.0 75.4,41.7 76.4,43.6 75.1,45.2 75.9,47.1 74.4,48.6 75.0,50.6 73.4,51.9 73.8,54.0 72.0,55.2 72.2,57.2 70.4,58.2 70.4,60.3 68.5,61.1 68.3,63.2 66.3,63.8 65.9,65.9 63.8,66.3 63.2,68.3 61.1,68.5 60.3,70.4 58.2,70.4 57.2,72.2 55.2,72.0 54.0,73.8 51.9,73.4 50.6,75.0 48.6,74.4 47.1,75.9 45.2,75.1 43.6,76.4 41.7,75.4 40.0,76.6 38.3,75.4 36.4,76.4 34.8,75.1 32.9,75.9 31.4,74.4 29.4,75.0 28.1,73.4 26.0,73.8 24.8,72.0 22.8,72.2 21.8,70.4 19.7,70.4 18.9,68.5 16.8,68.3 16.2,66.3 14.1,65.9 13.7,63.8 11.7,63.2 11.5,61.1 9.6,60.3 9.6,58.2 7.8,57.2 8.0,55.2 6.2,54.0 6.6,51.9 5.0,50.6 5.6,48.6 4.1,47.1 4.9,45.2 3.6,43.6 4.6,41.7 3.4,40.0 4.6,38.3 3.6,36.4 4.9,34.8 4.1,32.9 5.6,31.4 5.0,29.4 6.6,28.1 6.2,26.0 8.0,24.8 7.8,22.8 9.6,21.8 9.6,19.7 11.5,18.9 11.7,16.8 13.7,16.2 14.1,14.1 16.2,13.7 16.8,11.7 18.9,11.5 19.7,9.6 21.8,9.6 22.8,7.8 24.8,8.0 26.0,6.2 28.1,6.6 29.4,5.0 31.4,5.6 32.9,4.1 34.8,4.9 36.4,3.6 38.3,4.6 40.0,3.4 41.7,4.6 43.6,3.6 45.2,4.9 47.1,4.1 48.6,5.6 50.6,5.0 51.9,6.6 54.0,6.2 55.2,8.0 57.2,7.8 58.2,9.6 60.3,9.6 61.1,11.5 63.2,11.7 63.8,13.7 65.9,14.1 66.3,16.2 68.3,16.8 68.5,18.9 70.4,19.7 70.4,21.8 72.2,22.8 72.0,24.8 73.8,26.0 73.4,28.1 75.0,29.4 74.4,31.4 75.9,32.9 75.1,34.8 76.4,36.4 75.4,38.3" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.5"/>
-</svg>
-      </span>
-      <span>Kỷ Nguyên Số: <strong>Việt Phục Remix</strong> — Phối Trang Phục Truyền Thống Phong Cách Gen Z</span>
+    <!-- Cultural Heritage Badge With Real Chim Lac & Clouds -->
+    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-gradient-to-r from-brand-gold/15 via-brand-crimson/15 to-brand-gold/15 border border-brand-gold/35 text-xs text-amber-200 mb-5 shadow-lg shadow-brand-gold/10">
+      <img src="assets/chim_lac_ngoc_lu_gold.png" alt="Chim Lạc Ngọc Lũ" class="h-4 w-auto object-contain inline-block" />
+      <span>Việt Phục Remix: <strong>Cổ Phục Đại Việt x Thời Trang Gen Z</strong></span>
+      <img src="assets/van_may_nhu_y_gold.png" alt="Văn Mây Như Ý Thời Trần" class="h-3 w-auto object-contain inline-block opacity-80" />
     </div>
     
     <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white max-w-5xl mx-auto leading-tight font-serif">
@@ -709,21 +184,20 @@
     </h2>
     
     <p class="mt-4 text-sm sm:text-base text-gray-300 max-w-3xl mx-auto leading-relaxed">
-      Nền tảng hòa quyện 4000 năm mỹ học y phục Đại Việt với thời trang dạo phố đương đại. 
-      Được dẫn dắt bởi trí tuệ nhân tạo <strong>Google Gemini 2.5 Flash</strong> cùng <strong>Hệ Thống Khiên Văn Hóa 3 Lớp</strong> 
+      Nền tảng trí tuệ nhân tạo hòa quyện 4.000 năm mỹ học y phục Đại Việt với thời trang streetwear đương đại. 
+      Được trợ lực bởi <strong>Google Gemini 2.5 Flash</strong> cùng <strong>Hệ Thống Khiên Văn Hóa 3 Lớp</strong> 
       bảo toàn cốt cách năm vạt ngũ thân và sự tôn nghiêm cung đình.
     </p>
 
     <!-- 3-STEP EXPLAINER PILLS WITH CULTURAL MOTIFS -->
     <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-3.5 max-w-4xl mx-auto text-left text-xs">
-      <div class="p-4 rounded-2xl glass-card border border-brand-gold/20 flex items-start gap-3 hover:border-brand-gold/50 transition shadow-lg">
-        <div class="w-8 h-8 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center font-bold font-serif text-sm border border-brand-gold/30 shrink-0">
-          I
+      <div class="p-4 rounded-2xl glass-card border border-brand-gold/25 flex items-start gap-3 hover:border-brand-gold/60 transition shadow-lg">
+        <div class="w-9 h-9 rounded-xl bg-brand-gold/15 text-brand-gold flex items-center justify-center p-1 border border-brand-gold/30 shrink-0">
+          <img src="assets/chim_lac_ngoc_lu_gold.png" alt="Chim Lạc" class="w-full h-auto object-contain" />
         </div>
         <div>
-          <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-1.5">
-            <span>Chọn Cổ Phục & Sự Kiện</span>
-            <i data-lucide="sparkle" class="w-3 h-3 text-brand-gold"></i>
+          <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-1.5 font-serif">
+            <span>1. Chọn Cổ Phục & Bối Cảnh</span>
           </h4>
           <p class="text-[11px] text-gray-400 mt-1 leading-relaxed">
             Áo tấc, Ngũ thân tay chẽn, Giao lĩnh; phối cùng chân váy, quần âu, sneakers, túi mây tre đan.
@@ -731,14 +205,13 @@
         </div>
       </div>
 
-      <div class="p-4 rounded-2xl glass-card border border-brand-crimson/30 flex items-start gap-3 hover:border-brand-crimson/60 transition shadow-lg">
-        <div class="w-8 h-8 rounded-xl bg-brand-crimson/20 text-rose-300 flex items-center justify-center font-bold font-serif text-sm border border-brand-crimson/40 shrink-0">
-          II
+      <div class="p-4 rounded-2xl glass-card border border-brand-crimson/35 flex items-start gap-3 hover:border-brand-crimson/60 transition shadow-lg">
+        <div class="w-9 h-9 rounded-xl bg-brand-crimson/20 text-rose-300 flex items-center justify-center p-1 border border-brand-crimson/40 shrink-0">
+          <img src="assets/phuong_hoang_gold_transparent.png" alt="Phượng Hoàng" class="w-full h-full object-contain" />
         </div>
         <div>
-          <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-1.5">
-            <span>Gemini Quét 3 Lớp Văn Hóa</span>
-            <i data-lucide="shield" class="w-3 h-3 text-rose-400"></i>
+          <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-1.5 font-serif">
+            <span>2. Gemini Quét 3 Lớp Văn Hóa</span>
           </h4>
           <p class="text-[11px] text-gray-400 mt-1 leading-relaxed">
             Đối chiếu <em>Khâm Định Đại Nam Hội Điển</em>, cấm xé rách vạt hoặc lạm dụng Long văn 5 móng hoàng quyền.
@@ -746,14 +219,13 @@
         </div>
       </div>
 
-      <div class="p-4 rounded-2xl glass-card border border-brand-cyan/20 flex items-start gap-3 hover:border-brand-cyan/50 transition shadow-lg">
-        <div class="w-8 h-8 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center font-bold font-serif text-sm border border-brand-cyan/30 shrink-0">
-          III
+      <div class="p-4 rounded-2xl glass-card border border-brand-cyan/25 flex items-start gap-3 hover:border-brand-cyan/60 transition shadow-lg">
+        <div class="w-9 h-9 rounded-xl bg-brand-cyan/15 text-brand-cyan flex items-center justify-center p-1 border border-brand-cyan/30 shrink-0">
+          <img src="assets/van_may_nhu_y_gold.png" alt="Mây Như Ý" class="w-full h-auto object-contain" />
         </div>
         <div>
-          <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-1.5">
-            <span>Thẻ Lookbook Ngũ Hành</span>
-            <i data-lucide="palette" class="w-3 h-3 text-brand-cyan"></i>
+          <h4 class="font-bold text-white text-xs sm:text-sm flex items-center gap-1.5 font-serif">
+            <span>3. Thẻ Lookbook Ngũ Hành</span>
           </h4>
           <p class="text-[11px] text-gray-400 mt-1 leading-relaxed">
             Nhận bảng màu Ngũ Hành tương sinh, điểm chuẩn mực (0-100), gợi ý phụ kiện thủ công làng nghề.
@@ -765,28 +237,15 @@
     <!-- DUAL-BENCHMARK PRESET BUTTONS (WITH SOUND & HIGHLIGHT) -->
     <div class="mt-8 p-5 rounded-2xl lacquer-surface border border-brand-gold/30 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
       
-      <!-- Background corner decorative Phoenix stamps -->
-      <div class="absolute -right-8 -bottom-8 w-28 h-28 opacity-10 pointer-events-none">
-        <svg viewBox="0 0 48 48" class="w-full h-full text-brand-gold" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-  <!-- Vietnamese Phoenix / Chim Lac Silhouette -->
-  <path d="M 12 28 C 15 20, 24 16, 32 18 C 38 19, 42 16, 44 12 C 40 18, 36 24, 28 26 C 22 28, 16 32, 10 38 C 12 34, 11 30, 12 28 Z" fill="currentColor" fill-opacity="0.3" stroke-width="1.5"/>
-  <!-- Elegant Wing Spread -->
-  <path d="M 22 20 C 26 12, 34 8, 42 6 C 36 12, 32 18, 28 22" stroke-width="2" stroke-linecap="round"/>
-  <path d="M 20 23 C 23 16, 30 13, 37 11 C 32 16, 28 20, 25 24" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Beak and Crown Crest -->
-  <path d="M 12 28 L 6 30 L 11 26 Z" fill="currentColor"/>
-  <path d="M 12 26 Q 9 20, 5 21" stroke-width="1.5" stroke-linecap="round"/>
-  <path d="M 13 25 Q 11 17, 8 16" stroke-width="1.5" stroke-linecap="round"/>
-  <!-- Trailing Plumes / Duoi Phuong -->
-  <path d="M 10 38 Q 16 42, 24 44" stroke-width="1.5" stroke-dasharray="2 2" stroke-linecap="round"/>
-  <path d="M 10 38 Q 14 45, 20 46" stroke-width="1.5" stroke-dasharray="2 2" stroke-linecap="round"/>
-</svg>
+      <!-- Authentic Vietnamese Phoenix watermark on bottom-right -->
+      <div class="absolute -right-6 -bottom-6 w-32 h-32 opacity-15 pointer-events-none">
+        <img src="assets/phuong_hoang_gold_transparent.png" alt="Phượng Hoàng Nền" class="w-full h-full object-contain" />
       </div>
 
       <div class="flex items-center justify-between mb-3.5 relative z-10">
         <span class="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center gap-2">
           <i data-lucide="flame" class="w-4 h-4 text-brand-gold"></i>
-          Trải Nghiệm Trực Tiếp 2 Kịch Bản Đối Soát (Click Chạy Ngay)
+          Trải Nghiệm Trực Tiếp 2 Kịch Bản Đối Soát (Bấm Vào Xem Ngay)
         </span>
         <button onclick="resetForm()" class="text-[11px] text-gray-400 hover:text-white flex items-center gap-1 cursor-pointer">
           <i data-lucide="rotate-ccw" class="w-3 h-3"></i> Làm Mới
@@ -846,184 +305,12 @@
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
       
       <!-- LEFT COLUMN: STYLIST INPUT STUDIO (5 Cols) -->
-      <div class="lg:col-span-5 glass-card rounded-2xl p-6 shadow-2xl relative border border-brand-gold/20">
+      <div class="lg:col-span-5 glass-card rounded-2xl p-6 shadow-2xl relative border border-brand-gold/25">
         
-        <!-- Header with Trống Đồng mini watermark -->
+        <!-- Header with Authentic Chim Lac Badge -->
         <div class="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
           <div class="flex items-center gap-2.5">
-            <div class="w-6 h-6 text-brand-gold">
-              <svg viewBox="0 0 80 80" class="w-full h-full text-brand-gold" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-
-      <defs>
-        <radialGradient id="drumGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.35"/>
-          <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="40.0" cy="40.0" r="38.4" fill="url(#drumGlow)" stroke="none"/>
-    
-<circle cx="40.0" cy="40.0" r="38.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="36.8" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="35.2" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="30.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="28.8" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="24.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="22.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="17.6" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="16.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="10.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="3.2" stroke-width="1.5" stroke-opacity="0.7"/>
-<polygon points="40.0,29.6 40.8,36.5 44.5,30.6 42.2,37.2 48.1,33.5 43.2,38.4 50.1,37.7 43.6,40.0 50.1,42.3 43.2,41.6 48.1,46.5 42.2,42.8 44.5,49.4 40.8,43.5 40.0,50.4 39.2,43.5 35.5,49.4 37.8,42.8 31.9,46.5 36.8,41.6 29.9,42.3 36.4,40.0 29.9,37.7 36.8,38.4 31.9,33.5 37.8,37.2 35.5,30.6 39.2,36.5" fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="2"/>
-<circle cx="40.0" cy="40.0" r="2.0" fill="#D4AF37" fill-opacity="0.6"/>
-<polygon points="57.4,40.0 56.4,40.9 57.3,42.0 56.2,42.7 57.0,43.9 55.8,44.5 56.5,45.8 55.2,46.3 55.7,47.6 54.4,47.9 54.8,49.3 53.4,49.5 53.6,50.9 52.2,50.9 52.3,52.3 50.9,52.2 50.9,53.6 49.5,53.4 49.3,54.8 47.9,54.4 47.6,55.7 46.3,55.2 45.8,56.5 44.5,55.8 43.9,57.0 42.7,56.2 42.0,57.3 40.9,56.4 40.0,57.4 39.1,56.4 38.0,57.3 37.3,56.2 36.1,57.0 35.5,55.8 34.2,56.5 33.7,55.2 32.4,55.7 32.1,54.4 30.7,54.8 30.5,53.4 29.1,53.6 29.1,52.2 27.7,52.3 27.8,50.9 26.4,50.9 26.6,49.5 25.2,49.3 25.6,47.9 24.3,47.6 24.8,46.3 23.5,45.8 24.2,44.5 23.0,43.9 23.8,42.7 22.7,42.0 23.6,40.9 22.6,40.0 23.6,39.1 22.7,38.0 23.8,37.3 23.0,36.1 24.2,35.5 23.5,34.2 24.8,33.7 24.3,32.4 25.6,32.1 25.2,30.7 26.6,30.5 26.4,29.1 27.8,29.1 27.7,27.7 29.1,27.8 29.1,26.4 30.5,26.6 30.7,25.2 32.1,25.6 32.4,24.3 33.7,24.8 34.2,23.5 35.5,24.2 36.1,23.0 37.3,23.8 38.0,22.7 39.1,23.6 40.0,22.6 40.9,23.6 42.0,22.7 42.7,23.8 43.9,23.0 44.5,24.2 45.8,23.5 46.3,24.8 47.6,24.3 47.9,25.6 49.3,25.2 49.5,26.6 50.9,26.4 50.9,27.8 52.3,27.7 52.2,29.1 53.6,29.1 53.4,30.5 54.8,30.7 54.4,32.1 55.7,32.4 55.2,33.7 56.5,34.2 55.8,35.5 57.0,36.1 56.2,37.3 57.3,38.0 56.4,39.1" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.6"/>
-<g transform="rotate(0.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(45.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(90.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(135.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(180.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(225.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(270.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(315.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<polygon points="76.6,40.0 75.4,41.7 76.4,43.6 75.1,45.2 75.9,47.1 74.4,48.6 75.0,50.6 73.4,51.9 73.8,54.0 72.0,55.2 72.2,57.2 70.4,58.2 70.4,60.3 68.5,61.1 68.3,63.2 66.3,63.8 65.9,65.9 63.8,66.3 63.2,68.3 61.1,68.5 60.3,70.4 58.2,70.4 57.2,72.2 55.2,72.0 54.0,73.8 51.9,73.4 50.6,75.0 48.6,74.4 47.1,75.9 45.2,75.1 43.6,76.4 41.7,75.4 40.0,76.6 38.3,75.4 36.4,76.4 34.8,75.1 32.9,75.9 31.4,74.4 29.4,75.0 28.1,73.4 26.0,73.8 24.8,72.0 22.8,72.2 21.8,70.4 19.7,70.4 18.9,68.5 16.8,68.3 16.2,66.3 14.1,65.9 13.7,63.8 11.7,63.2 11.5,61.1 9.6,60.3 9.6,58.2 7.8,57.2 8.0,55.2 6.2,54.0 6.6,51.9 5.0,50.6 5.6,48.6 4.1,47.1 4.9,45.2 3.6,43.6 4.6,41.7 3.4,40.0 4.6,38.3 3.6,36.4 4.9,34.8 4.1,32.9 5.6,31.4 5.0,29.4 6.6,28.1 6.2,26.0 8.0,24.8 7.8,22.8 9.6,21.8 9.6,19.7 11.5,18.9 11.7,16.8 13.7,16.2 14.1,14.1 16.2,13.7 16.8,11.7 18.9,11.5 19.7,9.6 21.8,9.6 22.8,7.8 24.8,8.0 26.0,6.2 28.1,6.6 29.4,5.0 31.4,5.6 32.9,4.1 34.8,4.9 36.4,3.6 38.3,4.6 40.0,3.4 41.7,4.6 43.6,3.6 45.2,4.9 47.1,4.1 48.6,5.6 50.6,5.0 51.9,6.6 54.0,6.2 55.2,8.0 57.2,7.8 58.2,9.6 60.3,9.6 61.1,11.5 63.2,11.7 63.8,13.7 65.9,14.1 66.3,16.2 68.3,16.8 68.5,18.9 70.4,19.7 70.4,21.8 72.2,22.8 72.0,24.8 73.8,26.0 73.4,28.1 75.0,29.4 74.4,31.4 75.9,32.9 75.1,34.8 76.4,36.4 75.4,38.3" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.5"/>
-</svg>
-            </div>
+            <img src="assets/chim_lac_ngoc_lu_gold.png" alt="Chim Lạc" class="w-6 h-auto object-contain" />
             <h3 class="font-bold text-white text-base font-serif">Stylist Studio (Tùy Chỉnh Phối Đồ)</h3>
           </div>
           <span class="text-[11px] font-mono text-amber-300/80 px-2 py-0.5 rounded bg-brand-gold/10 border border-brand-gold/20">
@@ -1107,16 +394,16 @@
             >Tơ tằm màu xanh thiên thanh, phối chân váy xếp ly trắng tối giản, hài thêu truyền thống kết hợp túi xách thủ công mây tre đan.</textarea>
           </div>
 
-          <!-- Guardrail Options -->
-          <div class="p-3.5 rounded-xl bg-amber-500/[0.04] border border-brand-gold/20 space-y-1.5">
-            <div class="flex items-center justify-between text-xs text-amber-200 font-semibold">
+          <!-- Guardrail Options with Ruyi Cloud Accent -->
+          <div class="p-3.5 rounded-xl bg-amber-500/[0.04] border border-brand-gold/25 space-y-1.5 relative overflow-hidden">
+            <div class="flex items-center justify-between text-xs text-amber-200 font-semibold relative z-10">
               <span class="flex items-center gap-1.5">
                 <i data-lucide="shield-alert" class="w-3.5 h-3.5 text-brand-gold"></i>
                 Hệ Thống Khiên Văn Hóa 3 Lớp
               </span>
               <span class="text-[10px] text-emerald-400 font-mono font-bold">STRICT AUDIT</span>
             </div>
-            <p class="text-[11px] text-gray-400 leading-relaxed">
+            <p class="text-[11px] text-gray-400 leading-relaxed relative z-10">
               Tự động đối chiếu quy chế <em>Khâm Định Đại Nam Hội Điển Sự Lệ</em> và <em>Ngàn Năm Áo Mũ</em>.
             </p>
           </div>
@@ -1133,7 +420,7 @@
         </form>
 
         <!-- CoT Status Stepper Overlay (Hidden until inference) -->
-        <div id="cot-stepper" class="hidden mt-4 p-4 rounded-xl bg-black/80 border border-brand-gold/40 space-y-2.5 shadow-2xl">
+        <div id="cot-stepper" class="hidden mt-4 p-4 rounded-xl bg-black/85 border border-brand-gold/40 space-y-2.5 shadow-2xl">
           <div class="flex items-center justify-between text-xs text-brand-gold font-mono font-bold">
             <span class="flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-brand-gold animate-ping"></span>
@@ -1167,7 +454,7 @@
         <!-- DYNAMIC RESULT CONTAINER -->
         <div id="result-container" class="glass-card rounded-2xl p-6 sm:p-7 shadow-2xl relative border border-brand-gold/30 transition-all duration-300">
           
-          <!-- Visual Concept Header Banner -->
+          <!-- Visual Concept Header Banner With Vietnamese Phoenix Watermark -->
           <div class="flex flex-wrap items-center justify-between gap-3 border-b border-white/10 pb-4">
             <div>
               <div class="flex items-center gap-2 mb-1.5">
@@ -1197,14 +484,14 @@
                 <i id="guardrail-icon" data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
               </div>
               <div class="flex-1 min-w-0">
-                <span id="guardrail-alert-title" class="font-bold text-sm block mb-1 text-emerald-300">
+                <span id="guardrail-alert-title" class="font-bold text-sm block mb-1 text-emerald-300 font-serif">
                   ✅ KẾT QUẢ THẨM ĐỊNH: ĐẠT CHUẨN VĂN HÓA (98/100)
                 </span>
                 <p id="guardrail-assessment" class="font-normal leading-relaxed text-gray-200">
                   Bộ trang phục tuân thủ trọn vẹn cả 3 lớp bảo vệ văn hóa: Giữ nguyên kết cấu năm thân lập lĩnh và tay thụng tôn nghiêm của Áo tấc (Layer 1); Không sử dụng hoa văn vượt cấp hay biểu tượng cấm kỵ (Layer 2); Sự kết hợp chân váy xếp ly và túi mây tre đan mang lại vẻ đẹp tân thời, lịch sự tuyệt đối trong không gian di tích quốc gia đặc biệt (Layer 3).
                 </p>
                 <div id="remedial-box" class="hidden mt-3 pt-3 border-t border-rose-500/30">
-                  <span class="font-bold text-rose-300 block mb-1.5 text-xs flex items-center gap-1">
+                  <span class="font-bold text-rose-300 block mb-1.5 text-xs flex items-center gap-1 font-serif">
                     <i data-lucide="wrench" class="w-3.5 h-3.5"></i> Giải pháp khắc phục & thay thế hợp chuẩn văn hóa:
                   </span>
                   <ul id="remedial-list" class="space-y-1.5 text-rose-200 text-[11px]"></ul>
@@ -1234,7 +521,7 @@
 
           <!-- Aesthetic Composition Breakdown (Layers) - FIXED 2-COLUMN STRUCTURE -->
           <div class="mt-6">
-            <h4 class="text-xs font-semibold text-gray-200 mb-2.5 flex items-center gap-1.5">
+            <h4 class="text-xs font-semibold text-gray-200 mb-2.5 flex items-center gap-1.5 font-serif">
               <i data-lucide="layers" class="w-3.5 h-3.5 text-brand-gold"></i>
               Chi Tiết Phối Đồ Đa Lớp (Layering Composition)
             </h4>
@@ -1272,8 +559,8 @@
         </div>
 
         <!-- TRI-LAYER ARCHITECTURE INFOGRAPHIC (VIETNAMESE ROYAL STATUTE) -->
-        <div class="glass-card rounded-2xl p-5 border border-brand-gold/20">
-          <h4 class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-3 flex items-center gap-2">
+        <div class="glass-card rounded-2xl p-5 border border-brand-gold/25">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-amber-300 mb-3 flex items-center gap-2 font-serif">
             <i data-lucide="landmark" class="w-4 h-4 text-brand-gold"></i>
             Bộ Lọc Văn Hóa 3 Lớp (Tri-Layer Cultural Guardrails)
           </h4>
@@ -1310,179 +597,7 @@
   <footer class="border-t border-brand-gold/20 bg-black/80 py-8 text-center text-xs text-gray-400 font-mono relative z-10">
     <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4">
       <div class="flex items-center gap-2">
-        <div class="w-5 h-5 text-brand-gold inline-block">
-          <svg viewBox="0 0 80 80" class="w-full h-full text-brand-gold" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
-
-      <defs>
-        <radialGradient id="drumGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.35"/>
-          <stop offset="70%" stop-color="#D4AF37" stop-opacity="0.08"/>
-          <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="40.0" cy="40.0" r="38.4" fill="url(#drumGlow)" stroke="none"/>
-    
-<circle cx="40.0" cy="40.0" r="38.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="36.8" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="35.2" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="30.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="28.8" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="24.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="22.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="17.6" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="16.0" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="10.4" stroke-width="1.5" stroke-opacity="0.7"/>
-<circle cx="40.0" cy="40.0" r="3.2" stroke-width="1.5" stroke-opacity="0.7"/>
-<polygon points="40.0,29.6 40.8,36.5 44.5,30.6 42.2,37.2 48.1,33.5 43.2,38.4 50.1,37.7 43.6,40.0 50.1,42.3 43.2,41.6 48.1,46.5 42.2,42.8 44.5,49.4 40.8,43.5 40.0,50.4 39.2,43.5 35.5,49.4 37.8,42.8 31.9,46.5 36.8,41.6 29.9,42.3 36.4,40.0 29.9,37.7 36.8,38.4 31.9,33.5 37.8,37.2 35.5,30.6 39.2,36.5" fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="2"/>
-<circle cx="40.0" cy="40.0" r="2.0" fill="#D4AF37" fill-opacity="0.6"/>
-<polygon points="57.4,40.0 56.4,40.9 57.3,42.0 56.2,42.7 57.0,43.9 55.8,44.5 56.5,45.8 55.2,46.3 55.7,47.6 54.4,47.9 54.8,49.3 53.4,49.5 53.6,50.9 52.2,50.9 52.3,52.3 50.9,52.2 50.9,53.6 49.5,53.4 49.3,54.8 47.9,54.4 47.6,55.7 46.3,55.2 45.8,56.5 44.5,55.8 43.9,57.0 42.7,56.2 42.0,57.3 40.9,56.4 40.0,57.4 39.1,56.4 38.0,57.3 37.3,56.2 36.1,57.0 35.5,55.8 34.2,56.5 33.7,55.2 32.4,55.7 32.1,54.4 30.7,54.8 30.5,53.4 29.1,53.6 29.1,52.2 27.7,52.3 27.8,50.9 26.4,50.9 26.6,49.5 25.2,49.3 25.6,47.9 24.3,47.6 24.8,46.3 23.5,45.8 24.2,44.5 23.0,43.9 23.8,42.7 22.7,42.0 23.6,40.9 22.6,40.0 23.6,39.1 22.7,38.0 23.8,37.3 23.0,36.1 24.2,35.5 23.5,34.2 24.8,33.7 24.3,32.4 25.6,32.1 25.2,30.7 26.6,30.5 26.4,29.1 27.8,29.1 27.7,27.7 29.1,27.8 29.1,26.4 30.5,26.6 30.7,25.2 32.1,25.6 32.4,24.3 33.7,24.8 34.2,23.5 35.5,24.2 36.1,23.0 37.3,23.8 38.0,22.7 39.1,23.6 40.0,22.6 40.9,23.6 42.0,22.7 42.7,23.8 43.9,23.0 44.5,24.2 45.8,23.5 46.3,24.8 47.6,24.3 47.9,25.6 49.3,25.2 49.5,26.6 50.9,26.4 50.9,27.8 52.3,27.7 52.2,29.1 53.6,29.1 53.4,30.5 54.8,30.7 54.4,32.1 55.7,32.4 55.2,33.7 56.5,34.2 55.8,35.5 57.0,36.1 56.2,37.3 57.3,38.0 56.4,39.1" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.6"/>
-<g transform="rotate(0.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(45.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(90.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(135.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(180.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(225.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(270.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<g transform="rotate(315.0 40.0 40.0)">
-
-          <path d="M 5.0 15.599999999999998 
-                   C 15.0 -4.400000000000002, 45.0 -1.4000000000000021, 75.0 3.599999999999998
-                   C 105.0 8.599999999999998, 135.0 1.5999999999999979, 155.0 -1.4000000000000021
-                   C 125.0 11.599999999999998, 95.0 18.599999999999998, 65.0 17.599999999999998
-                   C 35.0 16.599999999999998, 15.0 21.599999999999998, 5.0 15.599999999999998 Z"
-                fill="#D4AF37" fill-opacity="0.3" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Wings outstretched upward -->
-          <path d="M 45.0 -1.4000000000000021 
-                   C 55.0 -28.400000000000002, 85.0 -34.400000000000006, 105.0 -26.400000000000002
-                   C 85.0 -16.400000000000002, 65.0 -4.400000000000002, 55.0 1.5999999999999979 Z"
-                fill="#D4AF37" fill-opacity="0.25" stroke="#D4AF37" stroke-width="1.5" />
-          <!-- Beak & Crown Crest -->
-          <path d="M 5.0 15.599999999999998 L -15.0 19.599999999999998 L 7.0 11.599999999999998 Z" fill="#D4AF37" />
-          <path d="M 12.0 1.5999999999999979 Q 2.0 -8.400000000000002 -8.0 -4.400000000000002" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
-        
-</g>
-<polygon points="76.6,40.0 75.4,41.7 76.4,43.6 75.1,45.2 75.9,47.1 74.4,48.6 75.0,50.6 73.4,51.9 73.8,54.0 72.0,55.2 72.2,57.2 70.4,58.2 70.4,60.3 68.5,61.1 68.3,63.2 66.3,63.8 65.9,65.9 63.8,66.3 63.2,68.3 61.1,68.5 60.3,70.4 58.2,70.4 57.2,72.2 55.2,72.0 54.0,73.8 51.9,73.4 50.6,75.0 48.6,74.4 47.1,75.9 45.2,75.1 43.6,76.4 41.7,75.4 40.0,76.6 38.3,75.4 36.4,76.4 34.8,75.1 32.9,75.9 31.4,74.4 29.4,75.0 28.1,73.4 26.0,73.8 24.8,72.0 22.8,72.2 21.8,70.4 19.7,70.4 18.9,68.5 16.8,68.3 16.2,66.3 14.1,65.9 13.7,63.8 11.7,63.2 11.5,61.1 9.6,60.3 9.6,58.2 7.8,57.2 8.0,55.2 6.2,54.0 6.6,51.9 5.0,50.6 5.6,48.6 4.1,47.1 4.9,45.2 3.6,43.6 4.6,41.7 3.4,40.0 4.6,38.3 3.6,36.4 4.9,34.8 4.1,32.9 5.6,31.4 5.0,29.4 6.6,28.1 6.2,26.0 8.0,24.8 7.8,22.8 9.6,21.8 9.6,19.7 11.5,18.9 11.7,16.8 13.7,16.2 14.1,14.1 16.2,13.7 16.8,11.7 18.9,11.5 19.7,9.6 21.8,9.6 22.8,7.8 24.8,8.0 26.0,6.2 28.1,6.6 29.4,5.0 31.4,5.6 32.9,4.1 34.8,4.9 36.4,3.6 38.3,4.6 40.0,3.4 41.7,4.6 43.6,3.6 45.2,4.9 47.1,4.1 48.6,5.6 50.6,5.0 51.9,6.6 54.0,6.2 55.2,8.0 57.2,7.8 58.2,9.6 60.3,9.6 61.1,11.5 63.2,11.7 63.8,13.7 65.9,14.1 66.3,16.2 68.3,16.8 68.5,18.9 70.4,19.7 70.4,21.8 72.2,22.8 72.0,24.8 73.8,26.0 73.4,28.1 75.0,29.4 74.4,31.4 75.9,32.9 75.1,34.8 76.4,36.4 75.4,38.3" stroke="#D4AF37" stroke-width="1" stroke-opacity="0.5"/>
-</svg>
-        </div>
+        <img src="assets/chim_lac_ngoc_lu_gold.png" alt="Chim Lạc" class="h-4 w-auto object-contain" />
         <p>HeritageVibe AI © 2026 • Đội thi Google AI Arena Vietnam 2026</p>
       </div>
       <div class="flex items-center space-x-4 text-[11px]">
@@ -1523,14 +638,12 @@
       if (window.lucide) lucide.createIcons();
     }
 
-    // Peaceful Temple Bronze Chime (Chuông Đồng Cổ)
     function playBronzeBell(freq = 528, decay = 2.0) {
       if (!isSoundEnabled) return;
       try {
         const ctx = getAudioContext();
         const now = ctx.currentTime;
         
-        // Fundamental tone
         const osc1 = ctx.createOscillator();
         const gain1 = ctx.createGain();
         osc1.type = 'sine';
@@ -1542,7 +655,6 @@
         osc1.start(now);
         osc1.stop(now + decay);
 
-        // Harmonic overtone (metallic bronze ring)
         const osc2 = ctx.createOscillator();
         const gain2 = ctx.createGain();
         osc2.type = 'sine';
@@ -1558,7 +670,6 @@
       }
     }
 
-    // Warning Bronze Gong (Trống Đồng / Chiêng Cảnh Báo)
     function playWarningGong() {
       if (!isSoundEnabled) return;
       try {
@@ -1883,20 +994,20 @@
 
       if (isApproved) {
         alertBox.className = 'mt-4 p-4 rounded-xl bg-emerald-950/30 border border-emerald-500/30 text-xs leading-relaxed text-emerald-200';
-        alertTitle.className = 'font-bold text-sm block mb-1 text-emerald-300';
+        alertTitle.className = 'font-bold text-sm block mb-1 text-emerald-300 font-serif';
         alertTitle.textContent = '✅ KẾT QUẢ THẨM ĐỊNH: ĐẠT CHUẨN VĂN HÓA (98/100)';
         iconWrapper.innerHTML = `<i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>`;
         assessmentText.textContent = payload.guardrail_evaluation.risk_assessment;
         remedialBox.classList.add('hidden');
       } else {
         alertBox.className = 'mt-4 p-4 rounded-xl bg-rose-950/40 border border-rose-500/50 text-xs leading-relaxed text-rose-200 shadow-xl shadow-rose-950/60 ring-1 ring-rose-500/40';
-        alertTitle.className = 'font-bold text-sm block mb-1 text-rose-300 flex items-center gap-1.5';
+        alertTitle.className = 'font-bold text-sm block mb-1 text-rose-300 flex items-center gap-1.5 font-serif';
         alertTitle.innerHTML = `<i data-lucide="alert-triangle" class="w-4 h-4 text-rose-400"></i> CẢNH BÁO ĐỎ: PHÁT HIỆN VI PHẠM TÔN NGHIÊM (12/100)`;
         iconWrapper.innerHTML = `<i data-lucide="shield-alert" class="w-5 h-5 text-rose-400 animate-bounce"></i>`;
         assessmentText.textContent = payload.guardrail_evaluation.risk_assessment;
         remedialBox.classList.remove('hidden');
         remedialList.innerHTML = payload.guardrail_evaluation.remedial_suggestions.map(s => `
-          <li class="p-2 rounded-lg bg-black/40 border border-rose-500/20 leading-relaxed">
+          <li class="p-2.5 rounded-lg bg-black/50 border border-rose-500/20 leading-relaxed">
             ${s}
           </li>
         `).join('');
