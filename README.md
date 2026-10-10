@@ -4,7 +4,12 @@
 > *Chủ đề:* **Việt Phục Remix – Phối Trang Phục Truyền Thống Theo Phong Cách Gen Z**  
 > *Tác giả:* **Ngô Minh Thiên Bảo (Reukem)** — Lớp 12A1 Trường Vinschool Central Park  
 > *Trải nghiệm trực tiếp trên GitHub Pages:* **[https://reukem.github.io/heritagevibe-ai/](https://reukem.github.io/heritagevibe-ai/)**  
-> *Mã nguồn GitHub:* **[https://github.com/reukem/heritagevibe-ai](https://github.com/reukem/heritagevibe-ai)**
+> *Mã nguồn GitHub:* **[https://github.com/reukem/heritagevibe-ai](https://github.com/reukem/heritagevibe-ai)**  
+> *Hồ sơ dự thi chính thức:* **[Xem chi tiết tại SUBMISSION_DOSSIER.md](SUBMISSION_DOSSIER.md)**
+
+<p align="center">
+  <img src="assets/preview_studio.png" alt="HeritageVibe AI Studio Live Interface" width="100%" />
+</p>
 
 ---
 
