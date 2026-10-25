@@ -1,15 +1,41 @@
 # HeritageVibe AI // Nền Tảng Việt Phục & Thổ Cẩm 54 Dân Tộc x Gen Z
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Competition-Google_AI_Arena_2026-4285F4?style=flat-square&logo=google" alt="Google AI Arena" />
+  <img src="https://img.shields.io/badge/Track-Audition_Round-blueviolet?style=flat-square" alt="Audition Round" />
+  <img src="https://img.shields.io/badge/Author-Solo_Highschooler_(Grade_12)-orange?style=flat-square" alt="Solo Highschooler" />
+  <img src="https://img.shields.io/badge/Audition_Status-Eliminated_%26_Ghosted-crimson?style=flat-square" alt="Eliminated & Ghosted" />
+  <img src="https://img.shields.io/badge/Platform-100%25_Live_Open_Source-success?style=flat-square" alt="Live Open Source" />
+</p>
+
 > **Dự Án Dự Thi Google AI Arena Vietnam 2026 — Vòng Audition**  
 > *Chủ đề:* **Việt Phục Remix – Phối Trang Phục Truyền Thống Theo Phong Cách Gen Z**  
 > *Tác giả:* **Ngô Minh Thiên Bảo (Reukem)** — Lớp 12A1 Trường Vinschool Central Park  
 > *Trải nghiệm trực tiếp trên GitHub Pages:* **[https://reukem.github.io/heritagevibe-ai/](https://reukem.github.io/heritagevibe-ai/)**  
 > *Mã nguồn GitHub:* **[https://github.com/reukem/heritagevibe-ai](https://github.com/reukem/heritagevibe-ai)**  
-> *Hồ sơ dự thi chính thức:* **[Xem chi tiết tại SUBMISSION_DOSSIER.md](SUBMISSION_DOSSIER.md)**
+> *Hồ sơ dự thi chính thức:* **[Xem chi tiết tại SUBMISSION_DOSSIER.md](SUBMISSION_DOSSIER.md)**  
+> *Báo cáo hậu kỳ chi tiết:* **[Xem toàn văn tại POST_MORTEM.md](POST_MORTEM.md)**
 
 <p align="center">
   <img src="assets/preview_studio.png" alt="HeritageVibe AI Studio Live Interface" width="100%" />
 </p>
+
+---
+
+## 📌 Tình Trạng Cuộc Thi & Báo Cáo Hậu Kỳ (Competition Status & Post-Mortem)
+
+Dự án được xây dựng và nộp bài chính thức cho **Google AI Arena Vietnam 2026** (Đồng tổ chức bởi Google & Đại học Quốc gia Hà Nội - VNU) trước hạn chót 23:59:59 ngày 10/10/2026.
+
+### ⚔️ Bối Cảnh "Đơn Độc Giữa Đấu Trường Đại Học":
+- **Thí sinh:** Tác giả là **học sinh lớp 12 (17 tuổi)**, tự thân nghiên cứu, thiết kế đồ họa vector SVG, lập trình giao diện và tích hợp API Gemini mà không có sự trợ giúp của đội nhóm hay giảng viên hướng dẫn.
+- **Đối thủ:** Đại đa số các đội tham gia đều là sinh viên đại học từ các trường công nghệ chuyên ngành (ĐHQGHN, Bách Khoa, RMIT...), thi đấu theo nhóm từ 3–5 thành viên kèm cố vấn học thuật.
+
+### 📭 Trải Nghiệm Bị "Ghosted" Từ Ban Tổ Chức:
+- Sau khi cổng Audition đóng, **Ban tổ chức không gửi bất kỳ email nào** thông báo kết quả, thư cảm ơn hay bảng điểm nhận xét cho thí sinh.
+- Người tham gia chỉ phát hiện mình không lọt vào vòng tiếp theo khi **tự đăng nhập thủ công** vào trang quản trị `ai-arena-vietnam.vnu.edu.vn` và thấy trạng thái đã bị đóng lại trong im lặng.
+- Dù kết quả ra sao, việc một cuộc thi lớn thiếu vắng hoàn toàn khâu giao tiếp tối thiểu qua email với thí sinh là một sự thiếu chuyên nghiệp đáng tiếc.
+
+👉 **Chi tiết toàn bộ phân tích kỹ thuật, đối sánh kiến trúc và hành trình được ghi nhận đầy đủ tại: [BÁO CÁO HẬU KỲ CHI TIẾT (POST_MORTEM.md)](POST_MORTEM.md).**
 
 ---
 
@@ -133,6 +159,8 @@ Kho đồ gồm 4 nhóm trang phục:
 
 ## 📄 7. Bản Quyền & Dự Thi
 
-- **Cuộc thi:** Google AI Arena Vietnam 2026
-- **Tác giả:** Ngô Minh Thiên Bảo (Reukem) — Lớp 12A1 Vinschool Central Park
+- **Cuộc thi:** Google AI Arena Vietnam 2026 (Chủ đề: *Việt Phục Remix*)
+- **Tác giả:** Ngô Minh Thiên Bảo ([reukem](https://github.com/reukem)) — Lớp 12A1 Trường Vinschool Central Park
 - **Email:** `baongoplayzgame@gmail.com`
+- **Tình trạng:** Bài thi hoàn thành nộp vòng Audition (10/10/2026). Dừng bước trước vòng Chung kết và bị ban tổ chức ghosted hoàn toàn không nhận được email thông báo/nhận xét.
+- **Tài liệu tham khảo:** [SUBMISSION_DOSSIER.md](SUBMISSION_DOSSIER.md) (Hồ sơ giải pháp nộp BTC) | [POST_MORTEM.md](POST_MORTEM.md) (Báo cáo hậu kỳ chi tiết)
